@@ -1,0 +1,1256 @@
+<?session_start();
+
+if($passwd=="haslo"&&$usern=="login")
+{
+session_register('passwd');
+session_register('usern');
+session_register('admin');
+$db=mysql_Connect("www.sql.skulls.nazwa.pl","skulls_1","kameleon");
+  mysql_select_db("skulls_1");
+
+
+
+if($admin1!="")
+{
+
+$admin=$admin1;
+};
+
+
+if($operacja="delete"&&$nr!="")
+{
+mysql_query ("delete from zamowienia where `lp`=$nr",$db);
+};
+
+
+?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-2">
+<META HTTP-EQUIV="Creation-date" CONTENT="2005-05-15T15:01:00Z">
+<META HTTP-EQUIV="Reply-to" CONTENT="sikurzakk@wsi.edu.pl">
+<META HTTP-EQUIV="Content-Language" CONTENT="pl">
+<META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls">
+<META NAME="Description" CONTENT="W sprzedaży dosyć kontrowersyjne koszulki">
+<META NAME="Author" CONTENT="Krzysztoff">
+<title>
+CMS KAMELEON
+</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#000000" ALINK="#000000" VLINK="#000000">
+<center>
+
+<SPAN STYLE=" font-family: Times New Roman; font-size: 14pt; color: #FF0000">
+<center>
+Content Management System<br>
+PANEL ADMINISTRACYJNY SKLEPU SKULLS.PL
+</CENTER>
+<BR>
+</SPAN>
+
+<TABLE CELLSPACING="2" CELLPADDING="2" BORDER="0" BGCOLOR="#FFFFFF">
+<tr>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=analiza" STYLE="font-family: Times New Roman; font-size: 12px">Analiza sprzedaży</A>
+
+<td ALIGN="CENTER" BGCOLOR="#00FFFF" >
+<A HREF="index1.php?admin1=dodajkolekcje" STYLE="font-family: Times New Roman; font-size: 12px">Dodaj kolekcje</A>
+</TD>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=dodajprzedmiot" STYLE="font-family: Times New Roman; font-size: 12px">Dodaj przedmiot</A>
+</TD>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=edycjaofirmie" STYLE="font-family: Times New Roman; font-size: 12px">O firmie</A>
+</TD>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=edycjaregulamin" STYLE="font-family: Times New Roman; font-size: 12px">Regulamin</A>
+</TD>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=sell" STYLE="font-family: Times New Roman; font-size: 12px">Sprzedaż</A>
+</TD>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=edycjaprzedmiot" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuń przedmiot</A>
+</TD>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=edycjakolekcja" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuń kolekcje</A>
+</TD>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=dodajjbaner" STYLE="font-family: Times New Roman; font-size: 12px">Dodaj baner</A>
+</TD>
+<td ALIGN="CENTER" BGCOLOR="#00FFFF">
+<A HREF="index1.php?admin1=edytujbaner" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuń baner</A>
+</TD>
+</TR>
+</TABLE>
+<br>
+
+
+
+
+
+
+
+<?
+
+
+// PORÓWNYWANIE SPRZEDAŻY
+
+
+if($admin=="analiza")
+{
+
+
+?>
+
+<TABLE WIDTH="783" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#CCCCCC">
+<tr>
+<TD ALIGN="CENTER" COLSPAN="3">
+Porównywanie wykresów ilości sprzedaży poszczególnych przedmiotów w określonych przedziałach czasu. 
+</TD>
+</tr>
+<tr>
+
+<TD ALIGN="CENTER" WIDTH="394">
+<FORM ACTION="index1.php" method="post">
+<HR SIZE="2" WIDTH="80%" COLOR="#0066FF">
+<SPAN STYLE=" font-family: Times New Roman; font-size: 12px">
+Wybierz przedział czasu sprzedaży.
+</SPAN>
+<br>
+Od dnia: &nbsp
+<SELECT name="adata1" value="">
+<?
+if ($adata1=="")
+{
+?>
+<OPTION SELECTED VALUE="">Od dnia</OPTION>
+<?
+}
+ELSE
+{
+?>
+<OPTION SELECTED VALUE="<?echo$adata1?>"><?echo$adata1?></OPTION>
+<?
+};
+
+
+
+
+$ab50=mysql_query("SELECT DISTINCT `data` FROM zamowienia",$db);
+while(list($sdata)=mysql_Fetch_Row($ab50))
+{
+if($sdata!=$adata1)
+{
+?>
+<option VALUE="<?echo$sdata?>"><?echo$sdata?></OPTION>
+<?
+};
+};
+?>
+</select>
+
+&nbsp
+Do dnia:
+&nbsp
+
+<SELECT name="adata2" value="">
+<?
+if ($adata2=="")
+{
+?>
+<OPTION SELECTED VALUE="">Do dnia</OPTION>
+<?
+}
+ELSE
+{
+?>
+<OPTION SELECTED VALUE="<?echo$adata2?>"><?echo$adata2?></OPTION>
+<?
+};
+
+
+
+$ab50=mysql_query("SELECT DISTINCT `data` FROM zamowienia",$db);
+while(list($sdata)=mysql_Fetch_Row($ab50))
+{
+if($sdata!=$adata2)
+{
+?>
+<option VALUE="<?echo$sdata?>"><?echo$sdata?></OPTION>
+
+<?
+};
+};
+?>
+</select>
+
+
+
+
+
+</TD>
+
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="390">
+
+
+
+
+
+
+
+
+
+<HR SIZE="2" WIDTH="80%" COLOR="#FF3300">
+<SPAN STYLE=" font-family: Times New Roman; font-size: 12px">
+Wybierz porównywany przedział czasu sprzedaży.
+</SPAN>
+<br>
+Od dnia: &nbsp
+<SELECT name="adata3" value="">
+<?
+if ($adata3=="")
+{
+?>
+<OPTION SELECTED VALUE="">Od dnia</OPTION>
+<?
+}
+ELSE
+{
+?>
+<OPTION SELECTED VALUE="<?echo$adata3?>"><?echo$adata3?></OPTION>
+<?
+};
+
+
+
+
+$ab50=mysql_query("SELECT DISTINCT `data` FROM zamowienia",$db);
+while(list($sdata)=mysql_Fetch_Row($ab50))
+{
+if($sdata!=$adata3)
+{
+?>
+<option VALUE="<?echo$sdata?>"><?echo$sdata?></OPTION>
+<?
+};
+};
+?>
+</select>
+
+&nbsp
+Do dnia:
+&nbsp
+
+<SELECT name="adata4" value="">
+<?
+if ($adata4=="")
+{
+?>
+<OPTION SELECTED VALUE="">Do dnia</OPTION>
+<?
+}
+ELSE
+{
+?>
+<OPTION SELECTED VALUE="<?echo$adata4?>"><?echo$adata4?></OPTION>
+<?
+};
+
+
+
+$ab50=mysql_query("SELECT DISTINCT `data` FROM zamowienia",$db);
+while(list($sdata)=mysql_Fetch_Row($ab50))
+{
+if($sdata!=$adata4)
+{
+?>
+<option VALUE="<?echo$sdata?>"><?echo$sdata?></OPTION>
+
+<?
+};
+};
+?>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</TD>
+</tr>
+<tr>
+<TD ALIGN="RIGHT" COLSPAN="2">
+<input TYPE="submit" name="submitdata" value="Pokaż wykres"> &nbsp
+</form>
+
+</TD>
+</TR>
+</TABLE>
+
+
+
+
+
+<?
+
+
+
+
+
+
+if($submitdata!="")
+{
+
+
+?>
+
+
+
+<TABLE WIDTH="783" CELLSPACING="1" BORDER="0" STYLE="font-family: Times New Roman; font-size: 12px">
+<TR>
+<TD STYLE="border: 1px solid #000000;">
+
+Nazwa przedm.
+</TD>
+
+<TD ALIGN="CENTER" STYLE="border: 1px solid #000000;">
+<SPAN STYLE=" font-family: Times New Roman; font-size: 11px">
+% sprzedanych przedmiotów w stosunku do<br>całkowitej sprzedaży w wyznaczonym okresie.
+</SPAN>
+</TD>
+<TD STYLE="border: 1px solid #000000;">
+<SPAN STYLE=" font-family: Times New Roman; font-size: 11px">
+Ilość
+</span>
+</TD>
+<TD WIDTH="3" BGCOLOR="#000000"></td>
+<TD STYLE="border: 1px solid #000000;">
+
+Nazwa przedm.
+</TD>
+
+<TD ALIGN="CENTER" STYLE="border: 1px solid #000000;">
+<SPAN STYLE=" font-family: Times New Roman; font-size: 11px">
+% sprzedanych przedmiotów w stosunku do<br>całkowitej sprzedaży w wyznaczonym okresie.
+</SPAN>
+</TD>
+<TD STYLE="border: 1px solid #000000;">
+<SPAN STYLE=" font-family: Times New Roman; font-size: 11px">
+Ilość
+</span>
+</TD>
+
+</TR>
+
+
+<?
+// SZUKANIE MAKSIMUM
+
+
+$ab10=mysql_query("SELECT SUM(ilosc) FROM zamowienia WHERE data BETWEEN '$adata1' AND '$adata2'  ORDER BY nrztabprzedm",$db);
+list($maxilosc1)=mysql_Fetch_Row($ab10);
+
+$suma3=0;
+$zp=mysql_query("select DISTINCT nazwa,nrztabprzedm  from 
+przedmiot,zamowienia where przedmiot.nr=zamowienia.nrztabprzedm AND data BETWEEN '$adata1' AND '$adata2' order by 
+nazwa", $db);
+
+
+while(list($nazwa2,$nrztab)=Mysql_Fetch_Row($zp))
+{
+
+
+?>
+<tr>
+<TD STYLE="border: 1px solid #000000;"><?echo$nazwa2?></TD>
+<TD ALIGN="LEFT" STYLE="border: 1px solid #000000;">
+<?
+
+$ab70=mysql_query("SELECT SUM(ilosc) FROM zamowienia WHERE `nrztabprzedm`='$nrztab' AND `data` BETWEEN '$adata1' AND '$adata2' ",$db);
+list($suma1)=mysql_Fetch_Row($ab70);
+
+
+$procent=$suma1*100/$maxilosc1;
+$procent=round($procent);
+$procent1=$procent*2;
+?>
+<IMG SRC="index/pics/kwadrat.gif" WIDTH="<?echo$procent1?>" HEIGHT="16" BORDER="0" ALT=""><?echo$procent?>%
+
+
+</TD>
+
+<TD STYLE="border: 1px solid #000000;">
+<?echo$suma1?>
+</TD>
+
+<TD WIDTH="3" BGCOLOR="#000000"></td>
+
+
+<!-- Druga kolumna -->
+
+<?
+$zp1=mysql_query("select DISTINCT nazwa,nrztabprzedm  from 
+przedmiot,zamowienia where (przedmiot.nr=zamowienia.nrztabprzedm) AND (nrztabprzedm='$nrztab' AND data BETWEEN '$adata3' AND '$adata4')", $db);
+
+list($nazwa4,$nrztab1)=Mysql_Fetch_Row($zp1);
+if($nazwa4!="")
+{
+?>
+
+<TD STYLE="border: 1px solid #000000;"><?echo$nazwa4?></TD>
+<TD ALIGN="LEFT" VALIGN="MIDDLE" STYLE="border: 1px solid #000000;">
+<?
+
+$ab71=mysql_query("SELECT SUM(ilosc) FROM zamowienia WHERE `nrztabprzedm`='$nrztab1' AND `data` BETWEEN '$adata3' AND '$adata4' ",$db);
+list($suma2)=mysql_Fetch_Row($ab71);
+
+
+$procent=$suma2*100/$maxilosc1;
+$procent=round($procent);
+
+$procent2=$procent*2;
+if($procent2>=200)
+{
+$procent2=200;
+};
+?>
+<IMG SRC="index/pics/kwadrat1.gif" WIDTH="<?echo$procent2?>" HEIGHT="16" BORDER="0" ALT=""><?echo$procent?>%
+
+
+</TD>
+
+<TD STYLE="border: 1px solid #000000;">
+<?
+echo "$suma2";
+$suma3+=$suma2;
+?>
+
+
+</TD>
+<?
+}
+else
+{
+
+?>
+<td colspan="3" STYLE="border: 1px solid #000000;">
+Brak sprzadaży <b>'<?echo$nazwa2?>'</b> w porównywanym okresie.
+</TD>
+<?
+};
+?>
+
+</TR>
+
+
+<?
+};
+
+?>
+
+<tr>
+<td>
+&nbsp
+</TD>
+<td>
+&nbsp
+</TD>
+<TD STYLE="border: 1px solid #000000;">
+<?echo$maxilosc1?>
+</TD>
+<td>
+&nbsp
+</TD>
+<td>
+&nbsp
+</TD>
+<td>
+&nbsp
+</TD>
+
+<TD STYLE="border: 1px solid #000000;">
+<?echo$suma3?>
+</TD>
+
+
+</TR>
+
+</table>
+
+<?
+};
+?>
+
+
+
+
+
+<!-- KONIEC PORÓWNYWANIA -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OBSERWACJA PRZEDMIOTÓW W CZASIE -->
+
+
+<HR ALIGN="CENTER" SIZE="2" WIDTH="100%" COLOR="#000000">
+
+<form ACTION="index1.php" method="post">
+<TABLE WIDTH="783" CELLSPACING="1" BORDER="0" BGCOLOR="#CCCCCC">
+<tr>
+<TD ALIGN="CENTER" colspan="3">
+Obserwacja ilości sprzedaży danego przedmiotu w określonym czasie.
+</TD>
+</TR>
+<tr>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">
+
+
+<SELECT name="aprzedmiot" value="">
+<?
+if ($aprzedmiot=="")
+{
+?>
+<OPTION SELECTED VALUE="">Wybierz przedmiot</OPTION>
+<?
+}
+ELSE
+{
+?>
+<OPTION SELECTED VALUE="<?echo$aprzedmiot?>"><?echo$aprzedmiot?></OPTION>
+<?
+};
+
+
+
+
+$ab50=mysql_query("SELECT DISTINCT `nazwa` FROM przedmiot order by nazwa",$db);
+while(list($snazwa)=mysql_Fetch_Row($ab50))
+{
+if($snazwa!=$aprzedmiot)
+{
+?>
+<option VALUE="<?echo$snazwa?>"><?echo$snazwa?></OPTION>
+<?
+};
+};
+?>
+</select>
+
+
+
+
+</TD>
+
+
+<TD ALIGN="CENTER" VALIGN="MIDDLE">
+
+
+<SELECT name="adata5" value="">
+<?
+if ($adata5=="")
+{
+?>
+<OPTION SELECTED VALUE="">Od dnia</OPTION>
+<?
+}
+ELSE
+{
+?>
+<OPTION SELECTED VALUE="<?echo$adata5?>"><?echo$adata5?></OPTION>
+<?
+};
+
+$ab50=mysql_query("SELECT DISTINCT `data` FROM zamowienia",$db);
+while(list($sdata)=mysql_Fetch_Row($ab50))
+{
+if($sdata!=$adata5)
+{
+?>
+<option VALUE="<?echo$sdata?>"><?echo$sdata?></OPTION>
+<?
+};
+};
+?>
+</select>
+
+
+
+
+</TD>
+<TD ALIGN="CENTER" VALIGN="MIDDLE">
+<SELECT name="adata6" value="">
+<?
+if ($adata6=="")
+{
+?>
+<OPTION SELECTED VALUE="">Do dnia</OPTION>
+<?
+}
+ELSE
+{
+?>
+<OPTION SELECTED VALUE="<?echo$adata6?>"><?echo$adata6?></OPTION>
+<?
+};
+
+
+
+
+$ab50=mysql_query("SELECT DISTINCT `data` FROM zamowienia",$db);
+while(list($sdata)=mysql_Fetch_Row($ab50))
+{
+if($sdata!=$adata6)
+{
+?>
+<option VALUE="<?echo$sdata?>"><?echo$sdata?></OPTION>
+<?
+};
+};
+?>
+</select>
+
+</TD>
+</TR>
+<tr>
+<TD ALIGN="RIGHT" COLSPAN="3">
+<br>
+<input type="submit" name="wykresprzedmiotu" value="Pokaż wykres"> &nbsp
+</FORM>
+</TD>
+</TR>
+</TABLE>
+
+
+
+
+
+<?
+if ($wykresprzedmiotu!="")
+{
+?>
+<TABLE WIDTH="783" CELLSPACING="1" BORDER="0">
+<tr>
+<td STYLE="border: 1px solid #000000;">
+Data
+</TD>
+<TD ALIGN="CENTER" STYLE="border: 1px solid #000000;">
+% Sprzedanych przedmiotów w stosunku do całości sprzedaży w wybranym przedziale czasu.
+</TD >
+<td STYLE="border: 1px solid #000000;">
+Ilość
+</TD>
+</TR>
+
+<?
+$ab95=mysql_query("SELECT `nr` from przedmiot where nazwa='$aprzedmiot'",$db);
+list($nr05)=mysql_Fetch_Row($ab95);
+
+// szukanie maksimum
+
+$ab105=mysql_query("SELECT SUM(ilosc)FROM zamowienia WHERE (nrztabprzedm = '$nr05') AND (`data` BETWEEN '$adata5' AND '$adata6')",$db);
+list($maksimum)=mysql_Fetch_Row($ab105);
+$ab100=mysql_query("SELECT DISTINCT `data` from zamowienia where (`nrztabprzedm`='$nr05') AND (`data` BETWEEN '$adata5' AND '$adata6')",$db);
+while(list($data100)=mysql_Fetch_Row($ab100))
+{
+?>
+<TR>
+<TD WIDTH="80" STYLE="border: 1px solid #000000;">
+<?
+echo "$data100";
+?>
+</TD>
+<TD ALIGN="LEFT" VALIGN="MIDDLE" WIDTH="640" STYLE="border: 1px solid #000000;">
+<?
+$ab120=mysql_query("SELECT SUM(ilosc)FROM zamowienia WHERE (nrztabprzedm = '$nr05') AND (`data`='$data100')",$db);
+list($ilosc200)=mysql_Fetch_Row($ab120);
+$procent100=$ilosc200*100/$maksimum;
+$procent100=round($procent100);
+$procent101=$procent100*6;
+?>
+<IMG SRC="index/pics/kwadrat.gif" WIDTH="<?echo$procent101?>" HEIGHT="16" BORDER="0" ALT=""><SPAN STYLE=" font-family: times New Roman; font-size: 14px">
+<?echo$procent100?>%</SPAN>
+</TD>
+<TD STYLE="border: 1px solid #000000;">
+<?
+echo "$ilosc200";
+
+?>
+</TD>
+
+</TR>
+
+<?
+};
+?>
+
+</TABLE>
+<?
+};
+?>
+
+<HR ALIGN="CENTER" SIZE="2" WIDTH="100%" COLOR="#000000">
+
+
+
+
+<!-- KONIEC OBSERWACJI PRZEDMIOTU W CZASIE -->
+
+
+<?
+};
+?>
+
+
+
+
+
+
+
+
+
+
+<!-- DODAJ KOLEKCJE -->
+
+<?
+if ($admin=="dodajkolekcje")
+{
+?>
+<form ACTION="index1.php">
+Dodaj kolekcje do sklepu:
+<table border=1>
+<tr>
+<td>
+Kolekcja:
+</TD>
+<td>
+<input name="kolekcja" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Katalog:
+</TD>
+<td>
+<input name="katalog" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Punkty za styl mroczny:
+</TD>
+<td>
+<input name="p_ms" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Punkty za styl sportowy:
+</TD>
+<td>
+<input name="p_ss" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Punkty za styl zwykły:
+</TD>
+<td>
+<input name="p_zs" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Punkty za styl muzyczny:
+</TD>
+<td>
+<input name="p_mus" value="">
+</TD>
+</TR>
+</TABLE>
+<br>
+<input TYPE="submit" name="dodaj03" value="dodaj">
+</FORM>
+
+
+
+<?
+}
+
+
+//dodanie rekordu do kolekcja
+if ($kolekcja!=""&&$dodaj03=="dodaj") //&& $rodzaj!="" && $kolekcja!="" && $STAN!=""  && $p_ms!=""&& $p_ss!=""&& $p_zs!=""&& $p_mus!=""&& $katalog!=""&& $nazwa_p!="") 
+   
+   {
+   // dodanie rekordu do tabel
+
+   mysql_query("insert into kolekcje (kolekcja,klimat,katalog,p_ms,p_ss,p_zs,p_mus) 
+                 values ('$kolekcja','$klimat','$katalog','$p_ms','$p_ss','$p_zs','$p_mus')",$db);
+  
+   echo "Dodano rekordów: ",mysql_affected_rows($db);
+   }
+
+
+?>
+
+
+<!-- EDYCJA ZAWARTOŚCI REGULAMIN -->
+
+
+
+<?
+if($admin=="edycjaregulamin")
+{
+?>
+<table border=1 cellspacing="0">
+<tr>
+<TD ALIGN="CENTER">
+EDYCJA ZAWARTOŚCI SEKCJI "REGULAMIN"<br>
+(Można używać skryptów HTML).
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+
+<form ACTION="index1.php">
+
+
+
+<?
+ //edycja regulaminu
+if ($regul1=="zapisz")
+{
+
+$plik04=fopen("../index/regul.txt","w");
+fwrite($plik04, $regul, "4096");
+
+fclose($plik04);
+}
+
+
+
+
+$plik03=fopen("../index/regul.txt","r");
+?>
+
+
+<TEXTAREA NAME="regul" COLS="70" ROWS="15" WRAP="PHYSICAL" STYLE="text-align: center">
+<?
+do 
+{
+$tekst1=fgets($plik03,"4096");
+echo"$tekst1";
+}
+while ($tekst1!="");
+fclose($plik03);
+?>
+</TEXTAREA>
+<br><br>
+<input TYPE="submit" name="regul1" value="zapisz">
+
+</FORM>
+
+
+
+</TD>
+</TR>
+
+</TABLE>
+
+
+<?
+}
+
+
+?>
+
+
+
+
+
+
+
+<!-- EDYCJA ZAWARTOŚCI O FIRMIE -->
+
+<?
+if($admin=="edycjaofirmie")
+{
+?>
+<table border=1 cellspacing="0">
+<tr>
+<TD ALIGN="CENTER">
+EDYCJA ZAWARTOŚCI SEKCJI "O FIRMIE"<br>
+(Można używać skryptów HTML).
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+
+<form ACTION="index1.php">
+
+
+
+<?
+ //edycja o firmie
+if ($ofirm01=="zapisz")
+{
+
+$plik01=fopen("../index/ofirmie.txt","w");
+fwrite($plik01, $ofirmie, "4096");
+
+fclose($plik01);
+}
+
+
+
+$plik02=fopen("../index/ofirmie.txt","r");
+?>
+
+
+<TEXTAREA NAME="ofirmie" COLS="70" ROWS="15" WRAP="PHYSICAL" STYLE="text-align: center">
+<?
+do 
+{
+$tekst=fgets($plik02,"4096");
+echo"$tekst";
+}
+while ($tekst!="");
+fclose($plik02);
+?>
+</TEXTAREA>
+<br><br>
+<input TYPE="submit" name="ofirm01" value="zapisz">
+
+</FORM>
+
+
+
+</TD>
+</TR>
+
+</TABLE>
+
+
+<?
+}
+
+
+?>
+
+
+<!--DODAWANIE PRZEDMIOTU DO BAZY DANYCH -->
+
+<?
+if ($admin=="dodajprzedmiot")
+{
+?>
+
+<table border="1" cellspacing="0">
+<tr>
+<TD ALIGN="CENTER">
+Do jakiej kolekcji chcesz dodać przedmiot?
+</TD>
+</TR>
+<tr>
+<TD ALIGN="CENTER">
+
+
+
+<form ACTION="index1.php">
+<select name=kolekcje02>
+<?
+ $ab=mysql_query("SELECT kolekcja FROM kolekcje",$db);
+ 
+ while(list($kolekcja05)=mysql_Fetch_Row($ab))
+ {
+ echo "<option value=$kolekcja05>$kolekcja05</option>";
+ }
+?>
+</SELECT>
+<br><br>
+<input TYPE="submit" name="dodajprzedmiot01" value="Dalej">
+</FORM>
+
+
+</TD>
+</TR>
+
+
+
+</TABLE>
+<?
+}
+if ($dodajprzedmiot01=="Dalej")
+{
+?>
+Dodaj przedmiot:
+
+<form ACTION="index1.php">
+<table border="1" cellspacing="0">
+<tr>
+<TD>
+Nazwa przedmiotu:
+</TD>
+<td>
+<INPUT TYPE="TEXT" NAME="nazwa">
+</TD>
+</TR>
+<tr>
+<td>
+Kolekcja:
+</TD>
+<td>
+<input name="kolekcja" READONLY value="<?echo$kolekcje02?>">
+</TD>
+</TR>
+<tr>
+<td>
+Stan na magazynie (TAK/NIE):
+</TD>
+<td>
+<input name="STAN" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Punkty za styl mroczny:
+</TD>
+<td>
+<input name="p_ms" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Punkty za styl sportowy:
+</TD>
+<td>
+<input name="p_ss" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Punkty za styl zwykły:
+</TD>
+<td>
+<input name="p_zs" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Punkty za styl muzyczny:
+</TD>
+<td>
+<input name="p_mus" value="">
+</TD>
+</tr>
+<tr>
+<td>
+Katalog ze zdjęciami:
+</TD>
+<td>
+<?
+
+$ab05=mysql_query("SELECT katalog FROM kolekcje WHERE kolekcja='$kolekcje02'",$db);
+list($katalog05)=mysql_Fetch_Row($ab05);
+?>
+<input name="katalog" READONLY value="index/towar/<?echo$katalog05?>">
+</td>
+</tr>
+<tr>
+<td>
+Nazwa pliku:
+</TD>
+<td>
+<input name="nazwa_p" value="">
+</TD>
+</TR>
+<tr>
+<td>
+Status:
+</TD>
+<td>
+<input name="status" value="">
+</TD>
+</TR>
+
+<tr>
+<td>Opis przedmiotu:</TD>
+<td>
+<TEXTAREA NAME="opis" COLS="30" ROWS="4">
+</TEXTAREA>
+</TD>
+</TR>
+<tr>
+<td>
+Cena:
+</TD>
+<td>
+<input name="cena" value="">
+</TD>
+</TR>
+
+
+</table>
+<br><br>
+<input TYPE="submit" name="dodajp02" value="Dodaj">
+</FORM>
+<?
+} 
+if ($dodajp02=="Dodaj"&&$nazwa!="")
+{
+
+$nazwa_p2="t$nazwa_p";
+mysql_query("insert into przedmiot (nazwa,kolekcja,STAN,p_ms,p_ss,p_zs,p_mus,katalog,nazwa_p,nazwa_p2,opis,status,cena) 
+                 values ('$nazwa','$kolekcja','$STAN','$p_ms','$p_ss','$p_zs','$p_mus','$katalog','$nazwa_p','$nazwa_p2','$opis','$status','$cena')",$db);
+  
+   echo "Dodano rekordów: ",mysql_affected_rows($db);
+
+
+
+}
+
+
+
+ // REALIZACJA ZAMOWIEN
+
+if($admin=="sell")
+{
+
+
+
+$fc05=mysql_query("select DISTINCT `nradr` from zamowienia",$db);
+while(list($nradr01)=mysql_Fetch_Row($fc05))
+{
+?>
+<table width="780px" STYLE="border: 1px solid #0000FF;">
+<tr>
+<td WIDTH="400px" STYLE="border: 1px solid #000000;">
+<?
+$fc10=mysql_query("select `login`,`imie`,`nazwisko`,`kodpoczt`,`miescow`,`ulica`,`nrd`,`nrm`,`tel`,`email` from adresy where `nr`='$nradr01'",$db);
+list($login,$imie,$nazwisko,$kodpoczt,$miejscow,$ulica,$nrd,$nrm,$tel,$email)=mysql_Fetch_Row($fc10);
+echo"<b>Login: $login </B><br>";
+echo"<b>Adres:</b><br>$imie $nazwisko $kodpoczt $miejscow ul. $ulica $nrd";
+if($nrm!="")
+{
+echo" / $nrm";
+}; 
+echo "</td><td WIDTH='*%' align='CENTER' STYLE='border: 1px solid #000000;'><b>Tel. </b> $tel <b>email: </B> $email";
+?>
+</TD>
+</TR>
+<tr> 
+<td COLSPAN="2" STYLE="border: 1px solid #FF0000;">
+
+<table border=1 WIDTH="100%">
+<tr>
+<td>Nazwa</TD><td>Kategoria</TD><td>Rozmiar</TD><td>Ilość</TD><td>Cena/szt</TD><td>Sposób zapłaty</TD><td><b>Operacja</B></TD>
+</TR>
+<?
+$fc22=mysql_query("select `lp`,`nrztabprzedm`,`rozmiar`,`ilosc`,`kodprzel` from zamowienia where `nradr`='$nradr01'",$db);
+while (list($lp,$nrztabprzedm101,$rozmiar,$ilosc,$kodprzel)=mysql_Fetch_Row($fc22))
+{
+$fc23=mysql_query("select `nazwa`,`kolekcja`,`cena` from przedmiot where `nr`='$nrztabprzedm101'",$db);
+list($nazwa,$kolekcja,$cena)=mysql_Fetch_Row($fc23);
+?>
+<tr>
+<td><?echo$nazwa?></TD><td><?echo$kolekcja?></TD><td><?echo$rozmiar?></TD><td><?echo$ilosc?></TD><td><?echo$cena?></TD><td><?echo$kodprzel?></TD><td><A HREF="index1.php?operacja=delete&&nr=<?echo$lp?>">usuń zamówienie</A></TD>
+</TR>
+<?
+};
+?>
+</TABLE>
+
+</td>
+</TR>
+
+
+</TABLE>
+<br>
+<?
+};
+// koniec petli
+
+
+};
+
+?>
+
+
+
+
+
+
+
+
+
+</center>
+
+
+</body>
+</meta>
+</html>
+
+<?
+}
+else
+{
+?>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#000000" ALINK="#000000" VLINK="#000000">
+<center>
+
+<SPAN STYLE=" font-family: Times New Roman; font-size: 14pt; color: #FF0000">
+<center>
+Content Management System<br>
+PANEL ADMINISTRACYJNY SKLEPU SKULLS.PL
+</CENTER>
+<BR>
+</SPAN>
+
+<form ACTION="index1.php?request_server=www.nazwa.pl" name="form_login" method="POST">
+<CENTER><br><br>
+<?
+echo "Login: <input name='usern' value=''><br>";
+echo "Haslo: <input TYPE='password' name='passwd' value=''>";
+?>
+<br><br>
+<INPUT TYPE="SUBMIT" name=submit value="submit">
+</FORM>
+<br><br>
+<?
+
+
+
+echo "<center>ACCES DENIED</CENTER>";
+};
+?>
+</CENTER>
