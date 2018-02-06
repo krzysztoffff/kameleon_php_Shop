@@ -1,18 +1,1 @@
-Sklep jest w³asno¶ci± firmy SPISZ, 41-909 BYTOM ul. CYRYLA METODEGO 62/17 NIP: 626-001-16-99
-    KOLEJNO¦Æ DOKONYWANIA ZAKUPÓW:
-    - Z£O¯ENIE ZAMÓWIENIA POPRZEZ PRAWID£OWE WYPE£NIENIE FORMULARZA ZAKUPÓW, A¯ DO UZYSKANIA KOMUNIKATU:
- dokonano zamówienia.
-
-CZAS DOSTAWY:
-W zale¿no¶ci, jak± opcje zap³aty pañstwo wybrali.
-
-Je¿eli PRZELEW, to czas realizacji liczy siê od momentu, kiedy zaksiêgujemy wp³atê, czyli zaraz po tym jak bank potwierdzi pañstwa przelew. Wtedy to ju¿ tylko identyfikujemy zamówienie, towar do paczki i nadajemy Poczt± Polsk±. Oczygregrewi¶cie w tym przypadku przy odbiorze ju¿ nic pañstwo nie p³ac±. To wszystko trwa 1 - 2 dni robocze. Reszta czasu to czas dostarczania przez Pocztê Polsk± 2-7 dni roboczych.
-Ta opcja jest najtañsza (4 z³ przesy³ka)
-
-Je¿eli ZA POBRANIEM, to czas realizacji liczy siê zaraz od z³o¿enia zamówienia. Identyfikujemy zamówienie, towar do paczki(1-2dni robocze) i nadajemy Poczt± Polsk±(2-7 dni roboczych). P³ac± pañstwo przy odbiorze. Ta opcja jest tylko dla klientów, którzy siê zarejestrowali w naszym sklepie i jest znacznie dro¿sza (9z³ przesy³ka).
-WA¯NE: Je¿eli klient nie odbierze zamówionej przez siebie paczki, wtedy opcja ZA POBRANIEM STAJE SIÊ NIEAKTYWNA dla tego klienta!
-
-KOSZTY:
-Wszystkie koszty, jakie musz± Pañstwo pokryæ s± wyra¼nie okre¶lone w formularzu zamawiania. Niema ¿adnych innych dodatkowych, czy ukrytych op³at.
-Je¿eli idziecie Pañstwo Zap³aciæ za zamówienie to kwota wp³aty jest dok³adnie taka, jak± okre¶li³ formularz.
-Podobnie w przypadku ZA POBRANIEM je¿eli przychodzi do Pañstwa listonosz to  p³aci siê dok³adnie tyle, ile okre¶li³ formularz zamawiania.
+Tu wpisz regulamin sklepu.
