@@ -4,11 +4,11 @@
 <META HTTP-EQUIV="Creation-date" CONTENT="2005-04-04T14:10:08Z">
 <META HTTP-EQUIV="Reply-to" CONTENT="sikurzakk@wsi.edu.pl">
 <META HTTP-EQUIV="Content-Language" CONTENT="pl">
-<META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls">
-<META NAME="Description" CONTENT="W sprzedarzy dosyæ kontrowersyjne koszulki">
-<META NAME="Author" CONTENT="Krzysztoff">
+<META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki, koszulki, t-shirt, czaszki, koszulki, t-shirt, czaszki, koszulki, t-shirt, czaszki">
+<META NAME="Description" CONTENT="W sprzedarzy dosyï¿½ kontrowersyjne koszulki">
+<META NAME="Author" CONTENT="Krzysztoffff">
 <title>
-SKULLS-sklep
+Sklep
 </TITLE>
 <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
 <!--
@@ -92,16 +92,16 @@ function onmouseover_1() {
 			<IMG SRC="images/logo_25.jpg" WIDTH=128 HEIGHT=96></TD>
 	</TR>
 </TABLE>
-	
-	
+
+
 </TD>
 
 </TR>
 <tr>
 <TD ALIGN="CENTER">
 
-Praca dyplomowa: Sklep internetowy z elementami analizy sprzeda¿y oraz analizy aktywno¶ci klienta.<br> 
-<A HREF="index2.php" NAME="WEJD¬ DO SKLEPU" TARGET="_self" TITLE="WEJD¬ DO SKLEPU" STYLE="font-family: Times New Roman; font-size: 26px; color: #000000">WEJD¬ DO SKLEPU</A>
+Praca dyplomowa: Sklep internetowy z elementami analizy sprzedaï¿½y oraz analizy aktywnoï¿½ci klienta.<br>
+<A HREF="index2.php" NAME="WEJDï¿½ DO SKLEPU" TARGET="_self" TITLE="WEJDï¿½ DO SKLEPU" STYLE="font-family: Times New Roman; font-size: 26px; color: #000000">WEJDï¿½ DO SKLEPU</A>
 </TD>
 </tr>
 </TABLE>
