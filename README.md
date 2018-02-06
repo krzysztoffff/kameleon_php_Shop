@@ -5,6 +5,6 @@ Już wtedy pisanie sklepu było "oklepane" jednak mój posiada wyjątkową funkc
 Rejestruje aktywność użytkownika (2005r!) i zmienia skórki dostosowując swój wygląd do jego preferencji.
 Posiada też panel admina z elementami analizy sprzedarzy.
 Kod posiada trochę nieaktualnych metod i jest brzydko napisany. W większości w jednym pliku.
-Wymaga przeróbek oraz zbudowania bazy danych w MySQL.
+Wymaga przeróbek oraz zbudowania bazy danych w MySQL.<br>
 Jednak 12 lat temu działał doskonale ;)<br>
 Obszerna prezentacja, dokumentacja znajduje się w pliku KurzakKrzysztof-praca-20050427.doc

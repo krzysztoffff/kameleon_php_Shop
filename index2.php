@@ -62,8 +62,8 @@ session_register('limit2');
 
 
 
-$db=mysql_Connect("sql. .nazwa.pl"," _1","kameleon");
-  mysql_select_db(" _1");
+$db=mysql_Connect("server","user","password");
+  mysql_select_db("databyse");
 
 
  		// wylogowanie

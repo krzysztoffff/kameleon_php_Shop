@@ -1,12 +1,12 @@
 <?session_start();
 
-if($passwd=="krzysztoff666"&&$usern=="krisha")
+if($passwd=="admin"&&$usern=="admin")
 {
 session_register('passwd');
 session_register('usern');
 session_register('admin');
-$db=mysql_Connect("www.sql.skulls.nazwa.pl","skulls_1","kameleon");
-  mysql_select_db("skulls_1");
+$db=mysql_Connect("serwer","user","password");
+  mysql_select_db("databse");
 
 
 
@@ -24,10 +24,10 @@ $admin=$admin1;
 <HEAD>
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-2">
 <META HTTP-EQUIV="Creation-date" CONTENT="2005-04-12T07:07:20Z">
-<META HTTP-EQUIV="Reply-to" CONTENT="sikurzakk@wsi.edu.pl">
+<META HTTP-EQUIV="Reply-to" CONTENT="">
 <META HTTP-EQUIV="Content-Language" CONTENT="pl">
-<META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls">
-<META NAME="Description" CONTENT="W sprzedaży dosyć kontrowersyjne koszulki">
+<META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki,   koszulki, t-shirt, czaszki,   koszulki, t-shirt, czaszki,   koszulki, t-shirt, czaszki,  ">
+<META NAME="Description" CONTENT="W sprzedaďż˝y dosyďż˝ kontrowersyjne koszulki">
 <META NAME="Author" CONTENT="Krzysztoff">
 <title>
 CMS KAMELEON
@@ -41,7 +41,7 @@ CMS KAMELEON
 <SPAN STYLE=" font-family: Times New Roman; font-size: 14pt; color: #FF0000">
 <center>
 Content Management System<br>
-PANEL ADMINISTRACYJNY SKLEPU SKULLS.PL
+PANEL ADMINISTRACYJNY SKLEPU
 </CENTER>
 <BR>
 </SPAN>
@@ -49,7 +49,7 @@ PANEL ADMINISTRACYJNY SKLEPU SKULLS.PL
 <TABLE CELLSPACING="2" CELLPADDING="2" BORDER="0" BGCOLOR="#FFFFFF">
 <tr>
 <td ALIGN="CENTER" BGCOLOR="#00FFFF">
-<A HREF="index.php?admin1=analiza" STYLE="font-family: Times New Roman; font-size: 12px">Analiza sprzedaży</A>
+<A HREF="index.php?admin1=analiza" STYLE="font-family: Times New Roman; font-size: 12px">Analiza sprzedaďż˝y</A>
 
 <td ALIGN="CENTER" BGCOLOR="#00FFFF" >
 <A HREF="index.php?admin1=dodajkolekcje" STYLE="font-family: Times New Roman; font-size: 12px">Dodaj kolekcje</A>
@@ -64,19 +64,19 @@ PANEL ADMINISTRACYJNY SKLEPU SKULLS.PL
 <A HREF="index.php?admin1=edycjaregulamin" STYLE="font-family: Times New Roman; font-size: 12px">Regulamin</A>
 </TD>
 <td ALIGN="CENTER" BGCOLOR="#00FFFF">
-<A HREF="index.php?admin1=edycjaprzedmiot" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuń przedmiot</A>
+<A HREF="index.php?admin1=edycjaprzedmiot" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuďż˝ przedmiot</A>
 </TD>
 <td ALIGN="CENTER" BGCOLOR="#00FFFF">
-<A HREF="index.php?admin1=edycjakolekcja" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuń kolekcje</A>
+<A HREF="index.php?admin1=edycjakolekcja" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuďż˝ kolekcje</A>
 </TD>
 <td ALIGN="CENTER" BGCOLOR="#00FFFF">
 <A HREF="index.php?admin1=dodajjbaner" STYLE="font-family: Times New Roman; font-size: 12px">Dodaj baner</A>
 </TD>
 <td ALIGN="CENTER" BGCOLOR="#00FFFF">
-<A HREF="index.php?admin1=edytujbaner" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuń baner</A>
+<A HREF="index.php?admin1=edytujbaner" STYLE="font-family: Times New Roman; font-size: 12px">Edytuj/usuďż˝ baner</A>
 </TD>
 <td ALIGN="CENTER" BGCOLOR="#00FFFF">
-<A HREF="index.php?admin1=frontpage" STYLE="font-family: Times New Roman; font-size: 12px">Strona główna</A>
+<A HREF="index.php?admin1=frontpage" STYLE="font-family: Times New Roman; font-size: 12px">Strona gďż˝ďż˝wna</A>
 </TD>
 </TR>
 </TABLE>
@@ -91,7 +91,7 @@ PANEL ADMINISTRACYJNY SKLEPU SKULLS.PL
 <?
 
 
-// PORÓWNYWANIE SPRZEDAŻY
+// PORďż˝WNYWANIE SPRZEDAďż˝Y
 
 
 if($admin=="analiza")
@@ -103,7 +103,7 @@ if($admin=="analiza")
 <TABLE WIDTH="783" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#CCCCCC">
 <tr>
 <TD ALIGN="CENTER" COLSPAN="3">
-Porównywanie wykresów ilości sprzedaży poszczególnych przedmiotów w określonych przedziałach czasu. 
+Porďż˝wnywanie wykresďż˝w iloďż˝ci sprzedaďż˝y poszczegďż˝lnych przedmiotďż˝w w okreďż˝lonych przedziaďż˝ach czasu.
 </TD>
 </tr>
 <tr>
@@ -112,7 +112,7 @@ Porównywanie wykresów ilości sprzedaży poszczególnych przedmiotów w określonych 
 <FORM ACTION="index.php" method="post">
 <HR SIZE="2" WIDTH="80%" COLOR="#0066FF">
 <SPAN STYLE=" font-family: Times New Roman; font-size: 12px">
-Wybierz przedział czasu sprzedaży.
+Wybierz przedziaďż˝ czasu sprzedaďż˝y.
 </SPAN>
 <br>
 Od dnia: &nbsp
@@ -200,7 +200,7 @@ if($sdata!=$adata2)
 
 <HR SIZE="2" WIDTH="80%" COLOR="#FF3300">
 <SPAN STYLE=" font-family: Times New Roman; font-size: 12px">
-Wybierz porównywany przedział czasu sprzedaży.
+Wybierz porďż˝wnywany przedziaďż˝ czasu sprzedaďż˝y.
 </SPAN>
 <br>
 Od dnia: &nbsp
@@ -289,7 +289,7 @@ if($sdata!=$adata4)
 </tr>
 <tr>
 <TD ALIGN="RIGHT" COLSPAN="2">
-<input TYPE="submit" name="submitdata" value="Pokaż wykres"> &nbsp
+<input TYPE="submit" name="submitdata" value="Pokaďż˝ wykres"> &nbsp
 </form>
 
 </TD>
@@ -324,12 +324,12 @@ Nazwa przedm.
 
 <TD ALIGN="CENTER" STYLE="border: 1px solid #000000;">
 <SPAN STYLE=" font-family: Times New Roman; font-size: 11px">
-% sprzedanych przedmiotów w stosunku do<br>całkowitej sprzedaży w wyznaczonym okresie.
+% sprzedanych przedmiotďż˝w w stosunku do<br>caďż˝kowitej sprzedaďż˝y w wyznaczonym okresie.
 </SPAN>
 </TD>
 <TD STYLE="border: 1px solid #000000;">
 <SPAN STYLE=" font-family: Times New Roman; font-size: 11px">
-Ilość
+Iloďż˝ďż˝
 </span>
 </TD>
 <TD WIDTH="3" BGCOLOR="#000000"></td>
@@ -340,12 +340,12 @@ Nazwa przedm.
 
 <TD ALIGN="CENTER" STYLE="border: 1px solid #000000;">
 <SPAN STYLE=" font-family: Times New Roman; font-size: 11px">
-% sprzedanych przedmiotów w stosunku do<br>całkowitej sprzedaży w wyznaczonym okresie.
+% sprzedanych przedmiotďż˝w w stosunku do<br>caďż˝kowitej sprzedaďż˝y w wyznaczonym okresie.
 </SPAN>
 </TD>
 <TD STYLE="border: 1px solid #000000;">
 <SPAN STYLE=" font-family: Times New Roman; font-size: 11px">
-Ilość
+Iloďż˝ďż˝
 </span>
 </TD>
 
@@ -360,8 +360,8 @@ $ab10=mysql_query("SELECT SUM(ilosc) FROM zamowienia WHERE data BETWEEN '$adata1
 list($maxilosc1)=mysql_Fetch_Row($ab10);
 
 $suma3=0;
-$zp=mysql_query("select DISTINCT nazwa,nrztabprzedm  from 
-przedmiot,zamowienia where przedmiot.nr=zamowienia.nrztabprzedm AND data BETWEEN '$adata1' AND '$adata2' order by 
+$zp=mysql_query("select DISTINCT nazwa,nrztabprzedm  from
+przedmiot,zamowienia where przedmiot.nr=zamowienia.nrztabprzedm AND data BETWEEN '$adata1' AND '$adata2' order by
 nazwa", $db);
 
 
@@ -398,7 +398,7 @@ $procent1=$procent*2;
 <!-- Druga kolumna -->
 
 <?
-$zp1=mysql_query("select DISTINCT nazwa,nrztabprzedm  from 
+$zp1=mysql_query("select DISTINCT nazwa,nrztabprzedm  from
 przedmiot,zamowienia where (przedmiot.nr=zamowienia.nrztabprzedm) AND (nrztabprzedm='$nrztab' AND data BETWEEN '$adata3' AND '$adata4')", $db);
 
 list($nazwa4,$nrztab1)=Mysql_Fetch_Row($zp1);
@@ -443,7 +443,7 @@ else
 
 ?>
 <td colspan="3" STYLE="border: 1px solid #000000;">
-Brak sprzadaży <b>'<?echo$nazwa2?>'</b> w porównywanym okresie.
+Brak sprzadaďż˝y <b>'<?echo$nazwa2?>'</b> w porďż˝wnywanym okresie.
 </TD>
 <?
 };
@@ -494,7 +494,7 @@ Brak sprzadaży <b>'<?echo$nazwa2?>'</b> w porównywanym okresie.
 
 
 
-<!-- KONIEC PORÓWNYWANIA -->
+<!-- KONIEC PORďż˝WNYWANIA -->
 
 
 
@@ -513,7 +513,7 @@ Brak sprzadaży <b>'<?echo$nazwa2?>'</b> w porównywanym okresie.
 
 
 
-<!-- OBSERWACJA PRZEDMIOTÓW W CZASIE -->
+<!-- OBSERWACJA PRZEDMIOTďż˝W W CZASIE -->
 
 
 <HR ALIGN="CENTER" SIZE="2" WIDTH="100%" COLOR="#000000">
@@ -522,7 +522,7 @@ Brak sprzadaży <b>'<?echo$nazwa2?>'</b> w porównywanym okresie.
 <TABLE WIDTH="783" CELLSPACING="1" BORDER="0" BGCOLOR="#CCCCCC">
 <tr>
 <TD ALIGN="CENTER" colspan="3">
-Obserwacja ilości sprzedaży danego przedmiotu w określonym czasie.
+Obserwacja iloďż˝ci sprzedaďż˝y danego przedmiotu w okreďż˝lonym czasie.
 </TD>
 </TR>
 <tr>
@@ -638,7 +638,7 @@ if($sdata!=$adata6)
 <tr>
 <TD ALIGN="RIGHT" COLSPAN="3">
 <br>
-<input type="submit" name="wykresprzedmiotu" value="Pokaż wykres"> &nbsp
+<input type="submit" name="wykresprzedmiotu" value="Pokaďż˝ wykres"> &nbsp
 </FORM>
 </TD>
 </TR>
@@ -658,10 +658,10 @@ if ($wykresprzedmiotu!="")
 Data
 </TD>
 <TD ALIGN="CENTER" STYLE="border: 1px solid #000000;">
-% Sprzedanych przedmiotów w stosunku do całości sprzedaży w wybranym przedziale czasu.
+% Sprzedanych przedmiotďż˝w w stosunku do caďż˝oďż˝ci sprzedaďż˝y w wybranym przedziale czasu.
 </TD >
 <td STYLE="border: 1px solid #000000;">
-Ilość
+Iloďż˝ďż˝
 </TD>
 </TR>
 
@@ -759,7 +759,7 @@ Klimat:
 <option VALUE="mroczny">Mroczny</OPTION>
 <option VALUE="muzyczny">Muzyczny</OPTION>
 <option VALUE="sportowy">Sportowy</OPTION>
-<option VALUE="zwykly">Zwykły</OPTION>
+<option VALUE="zwykly">Zwykďż˝y</OPTION>
 </select>
 </TD>
 </tr>
@@ -789,7 +789,7 @@ Punkty za styl sportowy:
 </TR>
 <tr>
 <td>
-Punkty za styl zwykły:
+Punkty za styl zwykďż˝y:
 </TD>
 <td>
 <input name="p_zs" value="">
@@ -815,22 +815,22 @@ Punkty za styl muzyczny:
 
 
 //dodanie rekordu do kolekcja
-if ($kolekcja!=""&&$dodaj03=="dodaj") //&& $rodzaj!="" && $kolekcja!="" && $STAN!=""  && $p_ms!=""&& $p_ss!=""&& $p_zs!=""&& $p_mus!=""&& $katalog!=""&& $nazwa_p!="") 
-   
+if ($kolekcja!=""&&$dodaj03=="dodaj") //&& $rodzaj!="" && $kolekcja!="" && $STAN!=""  && $p_ms!=""&& $p_ss!=""&& $p_zs!=""&& $p_mus!=""&& $katalog!=""&& $nazwa_p!="")
+
    {
    // dodanie rekordu do tabel
 
-   mysql_query("insert into kolekcje (kolekcja,klimat,katalog,p_ms,p_ss,p_zs,p_mus) 
+   mysql_query("insert into kolekcje (kolekcja,klimat,katalog,p_ms,p_ss,p_zs,p_mus)
                  values ('$kolekcja','$klimat','$katalog','$p_ms','$p_ss','$p_zs','$p_mus')",$db);
-  
-   echo "Dodano rekordów: ",mysql_affected_rows($db);
+
+   echo "Dodano rekordďż˝w: ",mysql_affected_rows($db);
    }
 
 
 ?>
 
 
-<!-- EDYCJA ZAWARTOŚCI REGULAMIN -->
+<!-- EDYCJA ZAWARTOďż˝CI REGULAMIN -->
 
 
 
@@ -841,8 +841,8 @@ if($admin=="edycjaregulamin")
 <table border=1 cellspacing="0">
 <tr>
 <TD ALIGN="CENTER">
-EDYCJA ZAWARTOŚCI SEKCJI "REGULAMIN"<br>
-(Można używać skryptów HTML).
+EDYCJA ZAWARTOďż˝CI SEKCJI "REGULAMIN"<br>
+(Moďż˝na uďż˝ywaďż˝ skryptďż˝w HTML).
 </TD>
 </TR>
 <TR>
@@ -859,7 +859,7 @@ $plik03=fopen("../index/regul.txt","r");
 
 <TEXTAREA NAME="regul" COLS="70" ROWS="15" WRAP="PHYSICAL" STYLE="text-align: center">
 <?
-do 
+do
 {
 $tekst1=fgets($plik03,"4096");
 echo"$tekst1";
@@ -902,7 +902,7 @@ fclose($plik04);
 
 
 
-<!-- EDYCJA ZAWARTOŚCI O FIRMIE -->
+<!-- EDYCJA ZAWARTOďż˝CI O FIRMIE -->
 
 <?
 if($admin=="edycjaofirmie")
@@ -911,8 +911,8 @@ if($admin=="edycjaofirmie")
 <table border=1 cellspacing="0">
 <tr>
 <TD ALIGN="CENTER">
-EDYCJA ZAWARTOŚCI SEKCJI "O FIRMIE"<br>
-(Można używać skryptów HTML).
+EDYCJA ZAWARTOďż˝CI SEKCJI "O FIRMIE"<br>
+(Moďż˝na uďż˝ywaďż˝ skryptďż˝w HTML).
 </TD>
 </TR>
 <TR>
@@ -929,7 +929,7 @@ $plik02=fopen("../index/ofirmie.txt","r");
 
 <TEXTAREA NAME="ofirmie" COLS="70" ROWS="15" WRAP="PHYSICAL" STYLE="text-align: center">
 <?
-do 
+do
 {
 $tekst=fgets($plik02,"4096");
 echo"$tekst";
@@ -977,7 +977,7 @@ if ($admin=="dodajprzedmiot")
 <table border="1" cellspacing="0">
 <tr>
 <TD ALIGN="CENTER">
-Do jakiej kolekcji chcesz dodać przedmiot?
+Do jakiej kolekcji chcesz dodaďż˝ przedmiot?
 </TD>
 </TR>
 <tr>
@@ -989,7 +989,7 @@ Do jakiej kolekcji chcesz dodać przedmiot?
 <select name=kolekcje02>
 <?
  $ab=mysql_query("SELECT kolekcja FROM kolekcje",$db);
- 
+
  while(list($kolekcja05)=mysql_Fetch_Row($ab))
  {
  echo "<option value=$kolekcja05>$kolekcja05</option>";
@@ -1058,7 +1058,7 @@ Punkty za styl sportowy:
 </TR>
 <tr>
 <td>
-Punkty za styl zwykły:
+Punkty za styl zwykďż˝y:
 </TD>
 <td>
 <input name="p_zs" value="">
@@ -1074,7 +1074,7 @@ Punkty za styl muzyczny:
 </tr>
 <tr>
 <td>
-Katalog ze zdjęciami:
+Katalog ze zdjďż˝ciami:
 </TD>
 <td>
 <?
@@ -1124,15 +1124,15 @@ Cena:
 <input TYPE="submit" name="dodajp02" value="Dodaj">
 </FORM>
 <?
-} 
+}
 if ($dodajp02=="Dodaj"&&$nazwa!="")
 {
 
 $nazwa_p2="t$nazwa_p";
-mysql_query("insert into przedmiot (nazwa,kolekcja,STAN,p_ms,p_ss,p_zs,p_mus,katalog,nazwa_p,nazwa_p2,opis,status,cena) 
+mysql_query("insert into przedmiot (nazwa,kolekcja,STAN,p_ms,p_ss,p_zs,p_mus,katalog,nazwa_p,nazwa_p2,opis,status,cena)
                  values ('$nazwa','$kolekcja','$STAN','$p_ms','$p_ss','$p_zs','$p_mus','$katalog','$nazwa_p','$nazwa_p2','$opis','$status','$cena')",$db);
-  
-   echo "Dodano rekordów: ",mysql_affected_rows($db);
+
+   echo "Dodano rekordďż˝w: ",mysql_affected_rows($db);
 
 
 
@@ -1144,7 +1144,7 @@ mysql_query("insert into przedmiot (nazwa,kolekcja,STAN,p_ms,p_ss,p_zs,p_mus,kat
 
 
 
- // REALIZACJA ZAMÓWIEŃ
+ // REALIZACJA ZAMďż˝WIEďż˝
 
 if ($admin5=="realizacja"&&$edycja=="Wykonaj")
 
@@ -1190,7 +1190,7 @@ else
 <SPAN STYLE=" font-family: Times New Roman; font-size: 14pt; color: #FF0000">
 <center>
 Content Management System<br>
-PANEL ADMINISTRACYJNY SKLEPU SKULLS.PL
+PANEL ADMINISTRACYJNY SKLEPU  .PL
 </CENTER>
 <BR>
 </SPAN>
