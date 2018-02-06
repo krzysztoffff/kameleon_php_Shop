@@ -193,7 +193,7 @@ if ($wstecz1!="")
 <META HTTP-EQUIV="Creation-date" CONTENT="2005-03-18T21:45:23Z">
 <META HTTP-EQUIV="Reply-to" CONTENT="krzycho@pozaprawe.pl">
 <META HTTP-EQUIV="Content-Language" CONTENT="pl">
-<META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls">
+<META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki, koszulki, t-shirt, czaszki, koszulki, t-shirt, czaszki, koszulki, t-shirt, czaszki">
 <META NAME="Description" CONTENT="W sprzedarzy dosy� kontrowersyjne koszulki">
 <META NAME="Author" CONTENT="Krzysztoff">
 <title>
@@ -288,14 +288,7 @@ function onmouseover_1() {
    Poni�sze dane prosz� sobie zanotowa�, lub zapisa� na dysku. Zostan� one tak�e wys�ane na podany przez pa�stwa e-mail.</SPAN>
    <br><br>
    Nazwa odbiorcy:<br>
-   Katarzyna Kurzak<br>
-   41-909 Bytom ul. Cyryla i Metodego 62/17 &nbsp &nbsp<br><br>
-
-   Nr konta:<br>
-   30 8471 0000 0017 4424 9000 0001<br><br>
-
-   Bank Sp��dzielczy Bytom<br><br>
-      <?
+  <?
    $cena57+=4;
    ?>
    Kwota: <?echo$cena57?> z�<br><br>
@@ -307,17 +300,17 @@ function onmouseover_1() {
    <TABLE CELLSPACING="4" CELLPADDING="3" BORDER="0" STYLE="font-family: Times New Roman; font-size: 16px; color: #000000; font-weight: bold">
    <tr>
    <TD ALIGN="LEFT" VALIGN="TOP">
-   &nbsp &nbsp Katarzyna Kurzak 41-909 Bytom
+
    </TD>
    </TR>
    <tr>
    <td>
-   &nbsp &nbsp ul. Cyryla i Metodego 62/17
+
    </TD>
    </TR>
    <tr>
    <td>
-   &nbsp &nbsp 30 8471 0000 0017 4424 9000 0001
+
    </TD>
    </TR>
    <tr>
@@ -665,12 +658,12 @@ function onmouseover_1() {
    </TR>
    <tr>
    <td>
-   &nbsp &nbsp ul. Cyryla i Metodego 62/17
+
    </TD>
    </TR>
    <tr>
    <td>
-   &nbsp &nbsp 30 8471 0000 0017 4424 9000 0001
+
    </TD>
    </TR>
    <tr>
@@ -721,7 +714,7 @@ function onmouseover_1() {
 
    </SPAN>
    <?
-   $message="Zamowienie Skulls.pl.  $cena57 z�. \n Tytu�em: Zamowienie nr: $kodprzelewu \n\n ";
+   $message="Zamowienie.  $cena57 z�. \n Tytu�em: Zamowienie nr: $kodprzelewu \n\n ";
    mail($email, 'Potwierdzenie', $message,
      "From: admin@",
      "-fadmin@");
@@ -822,7 +815,7 @@ function onmouseover_1() {
       Potwierdzenie zam�wienia zosta�o wys�ane emailem na podane konto.<br>
    Dzi�kujemy za zakupy w naszym sklepie.<br><br>
    </SPAN>
-   <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT="WWW.SKULLS.PL"><br>
+   <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT=""><br>
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #FF99FF">
    <?
    $cena57+=9;
@@ -833,7 +826,7 @@ function onmouseover_1() {
    �yczymy mi�ego dnia.
    </SPAN>
    <?
-   $message="Zamowienie \n  $cena57 przy odbiorze. \n\n\n        Dzi�kujemy za zakupy w naszym sklepie. \n Zapraszamy ponownie \n \n www.skulls.pl";
+   $message="Zamowienie \n  $cena57 przy odbiorze. \n\n\n        Dzi�kujemy za zakupy w naszym sklepie. \n Zapraszamy ponownie";
    mail($email, 'Potwierdzenie', $message,
      "From: admin@",
      "-fadmin@");
@@ -1131,7 +1124,7 @@ function onmouseover_1() {
 
 <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="580" STYLE="border: 1px dotted #0099FF";>
 
-<IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT="WWW.SKULLS.PL">
+<IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT="">
 
 
 
@@ -1580,7 +1573,7 @@ $cena50=0;
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 13px">
 
 	Prosimy przeczyta� <A HREF="regulam.php?regul=yes" TARGET="_blank" TITLE="regulamin">regulamin zakup�w</A>.
-	Masz pytania? <A HREF="mailto:biuro@skulls.nazwa.pl" STYLE="font-family: Times New Roman; font-size: 12px; color: #FFFFFF">Napisz do nas</A>. Lub tel 0-607-196-453</SPAN>
+  Masz pytania? <A HREF="mailto:biuro@" STYLE="font-family: Times New Roman; font-size: 12px; color: #FFFFFF">Napisz do nas</A></SPAN>
 	</CENTER>
 
 
@@ -2487,8 +2480,7 @@ Gie�da motocykli w Warszawie.<BR><BR>
 <SPAN STYLE="font-family: Times New Roman; font-size: 14px; color: #FFFFFF">
 <MARQUEE DIRECTION="RIGHT" BEHAVIOR="SCROLL" LOOP="0">ROZK�AD JAZDY</MARQUEE>
 <br>
-W najbli�szy weekend namiot SKULLS jedzie na impreze do poznania.<br><br>
-Nasze stoisko -->
+
 
 </SPAN>
 
@@ -2570,11 +2562,11 @@ Nasze stoisko -->
 <SPAN STYLE=" font-family: Times New Roman; font-size: 13px">
 
 Prosimy przeczyta� <A HREF="regulam.php?regul=yes" TARGET="_blank" TITLE="regulamin">regulamin zakup�w</A>.
-Masz pytania? <A HREF="mailto:biuro@skulls.nazwa.pl" STYLE="font-family: Times New Roman; font-size: 12px; color: #FFFFFF">Napisz do nas</A>. Lub tel 0-607-196-453<br>
-e-mail: biuro@skulls.nazwa.pl admin@skulls.nazwa.pl<br>
-Webmaster: sikurzakk@wsi.edu.pl<br>
+Masz pytania? <A HREF="mailto:biuro@" STYLE="font-family: Times New Roman; font-size: 12px; color: #FFFFFF">Napisz do nas</A>.<br>
+e-mail: biuro@<br>
+
 </SPAN>
-WWW.SKULLS.PL<br>
+<br>
 <A HREF="index1.php?ofirm=ofirm" TITLE="O firmie" STYLE="font-family: Times New Roman; font-size: 12px">O firmie</A>
 </center>
 </body>
