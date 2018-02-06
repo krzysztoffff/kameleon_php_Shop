@@ -6,10 +6,10 @@
 <META HTTP-EQUIV="Reply-to" CONTENT="sikurzakk@wsi.edu.pl">
 <META HTTP-EQUIV="Content-Language" CONTENT="pl">
 <META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls">
-<META NAME="Description" CONTENT="W sprzedarzy dosyæ kontrowersyjne koszulki">
+<META NAME="Description" CONTENT="W sprzedarzy dosyï¿½ kontrowersyjne koszulki">
 <META NAME="Author" CONTENT="Krzysztoff">
 <title>
-SKULLS-sklep
+Regulamin klepu
 </TITLE>
 <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
 <!--
@@ -34,7 +34,7 @@ if ($regul!="")
 
 $plik02=fopen("index/regul.txt","r");
 
-do 
+do
 {
 $tekst1=fgets($plik02,"1024");
 echo"$tekst1<br>";
@@ -44,7 +44,7 @@ fclose($plik02);
 }
 ?>
 
-Aby powróciæ, zamknij to okno.
+Aby powrï¿½ciï¿½, zamknij to okno.
 
 </SPAN>
 

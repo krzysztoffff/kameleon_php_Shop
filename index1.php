@@ -25,19 +25,19 @@ session_register('limit1');
 session_register('limit2');
 
 
-$db=mysql_Connect("www.sql.skulls.nazwa.pl","skulls","skulls");
-  mysql_select_db("skulls");
+$db=mysql_Connect("serwer","user","password");
+  mysql_select_db("nazwa_bazy");
 
 
- 
+
   		// seria danych dla sekcji prawej
   		if($kolekcja01!="")
-		{ 
+		{
 		$dane01=$kolekcja01;
 		};
- 
- 		
-		// Seria danych dla sekcji ¶rodkowej
+
+
+		// Seria danych dla sekcji ï¿½rodkowej
 		if($nr02!="")
 		{
 		$dane02=$nr02;
@@ -51,10 +51,10 @@ $db=mysql_Connect("www.sql.skulls.nazwa.pl","skulls","skulls");
 		$dane02=$regul;
 
 		};
-		
-		
+
+
 		//ZMIENNE DLA KOSZYKA
-		
+
 		if ($dokosz!="")
 		{
 		$koszyk1++;
@@ -68,7 +68,7 @@ $db=mysql_Connect("www.sql.skulls.nazwa.pl","skulls","skulls");
 		session_register($ilosc30);
 		$$ilosc30=$ilosc10;
 		};
-		
+
 		if ($wyczysckosz!="")
 		{
 		$koszyk1=0;
@@ -76,8 +76,8 @@ $db=mysql_Connect("www.sql.skulls.nazwa.pl","skulls","skulls");
 		$rozmiar30="";
 		$ilosc30="";
 		};
-		
-		
+
+
 
 if ($destroy!="")   //ODSWIEZANIE
    {
@@ -89,7 +89,7 @@ if ($destroy!="")   //ODSWIEZANIE
    $koszczeg="";
    $zambezlog="";
    $zalogowany="";
-   $loginx="";  
+   $loginx="";
    $imiex="";
 		$nazwiskox="";
 		$kodpocztx="";
@@ -98,52 +98,52 @@ if ($destroy!="")   //ODSWIEZANIE
 		$nrdx="";
 		$nrmx="";
 		$telx="";
-		$emailx="";	
+		$emailx="";
 		$limit1="";
 		$limit2="";
-   
-   
-   
-   };
-   
 
- 
+
+
+   };
+
+
+
 
 if ($wstecz1!="")
    {
    $zamow="tak";
    $newuser="";
    };
- 
 
-   
-   
-   
+
+
+
+
 //   if($check50=="")
 //   {
-//   
+//
 //   $ab60=mysql_query("INSERT INTO `adresy` (`nr`,`haslo` , `login` , `imie` , `nazwisko` , `kodpoczt` , `miescow` , `ulica` , `nrd` , `nrm` , `tel` , `email` )
  //  VALUES ('', '$haslo1', '$login1', '$imie', '$nazwisko', '$kodp', '$miejscow', '$ulica', '$nrd', '$nrm', '$tel', '$email')",$db);
-   
-      
-   
+
+
+
 //   $newuser="";
 //   $login="tak";
 //   };
-   
-   
-   
-   
+
+
+
+
    if($login30!="")
    {
-   
-      
+
+
    $abc=mysql_query("SELECT * FROM `adresy` where haslo='$haslo1'&&login='$login1' LIMIT 0 , 1",$db);
-		
+
 		list($nr100,$haslo100,$login100,$imie100,$nazwisko100,$kodpoczt100,$miejscow100,$ulica100,$nrd100,$nrm100,$tel100,$email100)=mysql_Fetch_Row($abc);
 
-		
-		
+
+
 		if ($login100!=""&&$imie100!=""&&$nazwisko100!="")
 		{
 		$loginx=$login100;
@@ -155,22 +155,22 @@ if ($wstecz1!="")
 		$nrdx=$nrd100;
 		$nrmx=$nrm100;
 		$telx=$tel100;
-		$emailx=$email100;	
-		
-		
+		$emailx=$email100;
+
+
 		$zamow="zamow";
-		$zalogowany="zalogowany";	
+		$zalogowany="zalogowany";
 		}
    		else
 		{
-		$komunikat1="Nieprawid³owy login, lub has³o.";
+		$komunikat1="Nieprawidï¿½owy login, lub hasï¿½o.";
 		$login="tak";
 		$login30="";
 		};
-   
+
    };
 
-   
+
    //ZEROWANIE PRZEWIJANIA STRON
    if($do1!="")
    {
@@ -182,7 +182,7 @@ if ($wstecz1!="")
    $dane02="";
    };
 
-   
+
 ?>
 
 
@@ -191,13 +191,13 @@ if ($wstecz1!="")
 <HEAD>
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=iso-8859-2">
 <META HTTP-EQUIV="Creation-date" CONTENT="2005-03-18T21:45:23Z">
-<META HTTP-EQUIV="Reply-to" CONTENT="sikurzakk@wsi.edu.pl">
+<META HTTP-EQUIV="Reply-to" CONTENT="krzycho@pozaprawe.pl">
 <META HTTP-EQUIV="Content-Language" CONTENT="pl">
 <META NAME="Keywords" CONTENT="koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls koszulki, t-shirt, czaszki, skulls">
-<META NAME="Description" CONTENT="W sprzedarzy dosyæ kontrowersyjne koszulki">
+<META NAME="Description" CONTENT="W sprzedarzy dosyï¿½ kontrowersyjne koszulki">
 <META NAME="Author" CONTENT="Krzysztoff">
 <title>
-SKULLS-sklep
+Kameleon sklep
 </TITLE>
 <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
 <!--
@@ -211,97 +211,97 @@ function onmouseover_1() {
 <BODY BGCOLOR="#000000" TEXT="#FFFFFF" LINK="#FFFFFF" ALINK="#FFFFFF" VLINK="#FFFFFF">
 
 <?
-  //REALIZACJA ZAMÓWIENIA Z LOGOWANIEM PRZELEW.
+  //REALIZACJA ZAMï¿½WIENIA Z LOGOWANIEM PRZELEW.
   if ($potwzlog!=""&&$kodprzelewu!=""&&$zaplata=="przelew"&&$checksubmit2!="")
   {
-  
-     
+
+
    $checksubmit2="";
    $cena57=0;
-    
-   
-   
+
+
+
    $ab71=mysql_query("select nr from adresy where imie='$imiex'&&nazwisko='$nazwiskox'&&kodpoczt='$kodpocztx'&&miescow='$miejscowx'&&ulica='$ulicax'",$db);
-   
+
  					list($nradr)=mysql_Fetch_Row($ab71);
    $kodprzelewu="$kodprzelewu$nradr";
-   
-   
+
+
    $data1=date("y,m,d");
-	
-      
-   
-   
-      
+
+
+
+
+
 	for($i=1;$i<=$koszyk1;$i++)
 	{
-	
+
 	$e="nr30$i";
-	
+
 	$e1=$$e;
-	
+
 	$ab80=mysql_query("SELECT  cena from przedmiot where nr='$e1'",$db);
-		
+
 		list($cena51)=mysql_Fetch_Row($ab80);
-		
-	
+
+
 	$il3="ilosc30$i";
 	$il4=$$il3;
 	$cena57+=$cena51*$il4;
-	
-	
+
+
 	$r="rozmiar30$i";
 	$r1=$$r;
-	
-	
-	
-   $ab72=mysql_query("INSERT INTO `zamowienia` (`lp`,`nrztabprzedm`,`nradr`,`ilosc`,`rozmiar`,`data`,`dozaplaty`,`kodprzel`,`realizacja`) 
-   VALUES('','$e1','$nradr','$il4','$r1','$data1','$cena51','$kodprzelewu','')",$db);
-  
 
-	
+
+
+   $ab72=mysql_query("INSERT INTO `zamowienia` (`lp`,`nrztabprzedm`,`nradr`,`ilosc`,`rozmiar`,`data`,`dozaplaty`,`kodprzel`,`realizacja`)
+   VALUES('','$e1','$nradr','$il4','$r1','$data1','$cena51','$kodprzelewu','')",$db);
+
+
+
 	};
-	
-   
-   
+
+
+
    ?>
-   <form ACTION="index1.php">     
+   <form ACTION="index1.php">
    <?
    $wyczysckosz="tak";
    $destroy="yes";
    ?>
    <center>
-   
+
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #99FFFF">
-   Dokonano zamówienia.<br>
-      Potwierdzenie zamówienia zosta³o wys³ane emailem na konto <?echo$emailx?>.<br>
-   Dziêkujemy za zakupy w naszym sklepie.<br><br>
+   Dokonano zamï¿½wienia.<br>
+      Potwierdzenie zamï¿½wienia zostaï¿½o wysï¿½ane emailem na konto <?echo$emailx?>.<br>
+   Dziï¿½kujemy za zakupy w naszym sklepie.<br><br>
    </SPAN>
-   <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT="WWW.SKULLS.PL"><br>
+   <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT=""><br>
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #FF99FF">
-   Wp³aty prosimy dokonywaæ na konto:<br>
+   Wpï¿½aty prosimy dokonywaï¿½ na konto:<br>
    </SPAN>
    <table border=1 STYLE="border: 1px dotted #0099FF;">
    <tr>
    <TD ALIGN="LEFT" VALIGN="TOP">
    <SPAN STYLE=" font-family: Times New Roman; font-size: 18px; color: #99FFFF; font-weight: bold">
-   Poni¿sze dane proszê sobie zanotowaæ, lub zapisaæ na dysku. Zostan± one tak¿e wys³ane na podany przez pañstwa e-mail.</SPAN>
+   Poniï¿½sze dane proszï¿½ sobie zanotowaï¿½, lub zapisaï¿½ na dysku. Zostanï¿½ one takï¿½e wysï¿½ane na podany przez paï¿½stwa e-mail.</SPAN>
    <br><br>
    Nazwa odbiorcy:<br>
    Katarzyna Kurzak<br>
    41-909 Bytom ul. Cyryla i Metodego 62/17 &nbsp &nbsp<br><br>
-   
+
    Nr konta:<br>
    30 8471 0000 0017 4424 9000 0001<br><br>
-   
-   Bank Spó³dzielczy Bytom<br><br>
+
+   Bank Spï¿½ï¿½dzielczy Bytom<br><br>
       <?
    $cena57+=4;
    ?>
-   Kwota: <?echo$cena57?> z³<br><br>
-   Tytu³em: Zamowienie nr: <?echo$kodprzelewu?>
-   
-   
+   Kwota: <?echo$cena57?> zï¿½<br><br>
+   Tytuï¿½em: Zamowienie nr: <?echo$kodprzelewu?>
+
+
    </TD>
    <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="540" HEIGHT="360" BACKGROUND="index/grafiki/blankiet.jpg">
    <TABLE CELLSPACING="4" CELLPADDING="3" BORDER="0" STYLE="font-family: Times New Roman; font-size: 16px; color: #000000; font-weight: bold">
@@ -322,7 +322,7 @@ function onmouseover_1() {
    </TR>
    <tr>
    <td>
-   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <?echo$cena57?>   
+   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <?echo$cena57?>
    </TD>
    </TR>
    <tr>
@@ -357,25 +357,25 @@ function onmouseover_1() {
    </TD>
    </TR>
    </TABLE>
-   
+
    </TD>
    </TR>
    </TABLE>
    <SPAN STYLE=" font-family: Times New Roman; font-size: 14px; color: #CCFF99">
-   Natychmiast po zaksiêgowaniu wp³aty wy¶lemy zamówione przedmioty na Pañstwa adres.<br>
-   Z regu³y trwa to od 2 do 7 dni roboczych.<br>
-   W przypadku wiêkszych zamówieñ bêdziemy siê kontaktowaæ z Pañstwem telefonicznie.<br>
-   Na wp³atê czekamy 14 dni. Pó¼niej zamówienie zostaje anulowane.
-   ¯yczymy udanych zakupów.
-   
+   Natychmiast po zaksiï¿½gowaniu wpï¿½aty wyï¿½lemy zamï¿½wione przedmioty na Paï¿½stwa adres.<br>
+   Z reguï¿½y trwa to od 2 do 7 dni roboczych.<br>
+   W przypadku wiï¿½kszych zamï¿½wieï¿½ bï¿½dziemy siï¿½ kontaktowaï¿½ z Paï¿½stwem telefonicznie.<br>
+   Na wpï¿½atï¿½ czekamy 14 dni. Pï¿½ï¿½niej zamï¿½wienie zostaje anulowane.
+   ï¿½yczymy udanych zakupï¿½w.
+
    </SPAN>
    <?
-   $message="Zamowienie Skulls.pl. \n Czekamy na wplate od Panstwa na konto: \n Nazwa odbiorcy: \n Katarzyna Kurzak 41-909 Bytom ul. Cyryla i Metodego 62/17 \n Nr konta: 30 8471 0000 0017 4424 9000 0001 \n Bank Spó³dzielczy Bytom Kwota: $cena57 z³. \n Tytu³em: Zamowienie nr: $kodprzelewu \n\n\n Zamowienie zlozone przez uzytkownika $loginx    \n\n    Dziêkujemy za zakupy w naszym sklepie. \n Zapraszamy ponownie \n \n www.skulls.pl";
-   mail($emailx, 'SKULLS Potwierdzenie', $message,
-     "From: admin@akulls.nazwa.pl",
-     "-fadmin@skulls.nazwa.pl");
+   $message="Zamowienie. \n Czekamy na wplate od Panstwa na konto: ";
+   mail($emailx, 'Potwierdzenie', $message,
+     "From: admin",
+     "-fadmin");
 
-   
+
    $dane02="";
    $koszyk1=0;
    $dane01="";
@@ -384,7 +384,7 @@ function onmouseover_1() {
    $koszczeg="";
    $zambezlog="";
    $zalogowany="";
-   $loginx="";  
+   $loginx="";
    $imiex="";
 		$nazwiskox="";
 		$kodpocztx="";
@@ -393,134 +393,134 @@ function onmouseover_1() {
 		$nrdx="";
 		$nrmx="";
 		$telx="";
-		$emailx="";	
+		$emailx="";
 		$limit1="";
-		$limit2="";	
-   
-   
-   
-   ?>  
-   
+		$limit2="";
+
+
+
+   ?>
+
    <br><br>
    <input TYPE="hidden" name="wyczysckosz" value="<?echo$wyczysckosz?>">
    <input TYPE="hidden" name="destroy" value="<?echo$destroy?>">
-   <input TYPE="submit" name="powrot1" value="Powrót do sklepu">
-   
+   <input TYPE="submit" name="powrot1" value="Powrï¿½t do sklepu">
+
    </center>
    </FORM>
-   
+
    <?
-   
-   
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return;
   };
-  
-  
-  
-  
-  
-  //REALIZACJA ZAMÓWIENIA Z LOGOWANIEM ZA POBRANIEM.
+
+
+
+
+
+  //REALIZACJA ZAMï¿½WIENIA Z LOGOWANIEM ZA POBRANIEM.
   if($potwzlog!=""&&$zaplata=="zapobraniem"&&$checksubmit2!="")
   {
   $ckecksubmit2="";
   $cena57=0;
   $data1=date("y,m,d");
   ?>
-  
-  
-  
-  
+
+
+
+
   <?
-  
-  
+
+
   $ab71=mysql_query("select nr from adresy where imie='$imiex'&&nazwisko='$nazwiskox'&&kodpoczt='$kodpocztx'&&miescow='$miejscowx'&&ulica='$ulicax'&&nrd='$nrdx'",$db);
-   
+
  					list($nradr)=mysql_Fetch_Row($ab71);
-  
-  
+
+
   for($i=1;$i<=$koszyk1;$i++)
 	{
-	
+
 	$e="nr30$i";
-	
+
 	$e1=$$e;
-	
+
 	$ab80=mysql_query("SELECT  cena from przedmiot where nr='$e1'",$db);
-		
+
 		list($cena51)=mysql_Fetch_Row($ab80);
-		
-	
+
+
 	$il3="ilosc30$i";
 	$il4=$$il3;
 	$cena57+=$cena51*$il4;
-	
-	
+
+
 	$r="rozmiar30$i";
 	$r1=$$r;
-	
-	
-	
-   $ab72=mysql_query("INSERT INTO `zamowienia` (`lp`,`nrztabprzedm`,`nradr`,`ilosc`,`rozmiar`,`data`,`dozaplaty`,`kodprzel`,`realizacja`) 
-   VALUES('','$e1','$nradr','$il4','$r1','$data1','$cena51','zapobraniem','')",$db);
-  
 
-	
+
+
+   $ab72=mysql_query("INSERT INTO `zamowienia` (`lp`,`nrztabprzedm`,`nradr`,`ilosc`,`rozmiar`,`data`,`dozaplaty`,`kodprzel`,`realizacja`)
+   VALUES('','$e1','$nradr','$il4','$r1','$data1','$cena51','zapobraniem','')",$db);
+
+
+
 	};
-          
-  
+
+
   ?>
-  
-  <form ACTION="index1.php">     
+
+  <form ACTION="index1.php">
    <?
    $wyczysckosz="tak";
    $destroy="yes";
    ?>
    <center>
-   
+
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #99FFFF">
-   Dokonano zamówienia.<br>
-   Dziêkujemy za zakupy w naszym sklepie.<br>
-   Potwierdzenie zamówienia zosta³o wys³ane emailem na podane konto.<br>
+   Dokonano zamï¿½wienia.<br>
+   Dziï¿½kujemy za zakupy w naszym sklepie.<br>
+   Potwierdzenie zamï¿½wienia zostaï¿½o wysï¿½ane emailem na podane konto.<br>
    <br>
    </SPAN>
-   <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT="WWW.SKULLS.PL"><br>
+   <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT=""><br>
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #FF99FF">
-   
-   
-   
+
+
+
   <?
   $cena57+=9;
-   $message="Zamowienie Skulls.pl. \n\nDzien dobry.\n\n Potwierdzamy panstwa zamowienie w naszym sklepie.\n\n Na poczcie (lub listonoszowi) trzeba bedzie zaplacic $cena57 z³. przy odbiorze. \n\n\n      Dziêkujemy za zakupy w naszym sklepie. \n Zapraszamy ponownie \n \n www.skulls.pl";
-   mail($emailx, 'SKULLS Potwierdzenie', $message,
-     "From: admin@akulls.nazwa.pl",
-     "-fadmin@skulls.nazwa.pl");
+   $message="Zamowienie. \n\nDzien dobry.\n\n Potwierdzamy panstwa zamowienie w naszym sklepie.\n\n Na poczcie (lub listonoszowi) trzeba bedzie zaplacic $cena57 ";
+   mail($emailx, 'SPotwierdzenie', $message,
+     "From: admin",
+     "-fadmin@");
 
-   
+
    ?>
-   Przy odbiorze do zap³aty bêdzie <?echo$cena57?> z³.<br><br>  
+   Przy odbiorze do zapï¿½aty bï¿½dzie <?echo$cena57?> zï¿½.<br><br>
    </SPAN>
    <br><br>
    <input TYPE="hidden" name="wyczysckosz" value="<?echo$wyczysckosz?>">
    <input TYPE="hidden" name="destroy" value="<?echo$destroy?>">
-   <input TYPE="submit" name="powrot1" value="Powrót do sklepu">
+   <input TYPE="submit" name="powrot1" value="Powrï¿½t do sklepu">
 
-  
-  </form> 
+
+  </form>
   </center>
   <?
-  
+
   $dane02="";
    $koszyk1=0;
    $dane01="";
@@ -529,7 +529,7 @@ function onmouseover_1() {
    $koszczeg="";
    $zambezlog="";
    $zalogowany="";
-   $loginx="";  
+   $loginx="";
    $imiex="";
 		$nazwiskox="";
 		$kodpocztx="";
@@ -538,130 +538,129 @@ function onmouseover_1() {
 		$nrdx="";
 		$nrmx="";
 		$telx="";
-		$emailx="";	
+		$emailx="";
 		$limit1="";
-		$limit2="";	
-		
-   
-  
-  
+		$limit2="";
+
+
+
+
   return;
   }
 
 
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
 
 
 //REALIZACJA ZAMOWIENIA BEZ LOGOWANIA PRZELEW
    if($potw1!=""&&$submitcheck1!=""&&$zaplata=="przelew" )
    {
-   
+
    $submitcheck1="";
    $cena57=0;
-   
-   
-   $ab65=mysql_query("INSERT INTO adresy (nr,haslo,login,imie,nazwisko,kodpoczt,miescow,ulica,nrd,nrm,tel,email) VALUES ('','bez has³a', 'bez logowania', '$imie', '$nazwisko', '$kodp', '$miejscow', '$ulica', '$nrd', '$nrm', '$tel', '$email')",$db);
-   
-   
+
+
+   $ab65=mysql_query("INSERT INTO adresy (nr,haslo,login,imie,nazwisko,kodpoczt,miescow,ulica,nrd,nrm,tel,email) VALUES ('','bez hasï¿½a', 'bez logowania', '$imie', '$nazwisko', '$kodp', '$miejscow', '$ulica', '$nrd', '$nrm', '$tel', '$email')",$db);
+
+
    $ab71=mysql_query("select nr from adresy where imie='$imie'&&nazwisko='$nazwisko'&&kodpoczt='$kodp'&&miescow='$miejscow'&&ulica='$ulica'&&nrd='$nrd'",$db);
-   
+
  					list($nradr)=mysql_Fetch_Row($ab71);
    $kodprzelewu="$kodprzelewu$nradr";
-   
-   
+
+
    $data1=date("y,m,d");
-	
-   
- 					
-   
-   
-   
-      
+
+
+
+
+
+
+
 	for($i=1;$i<=$koszyk1;$i++)
 	{
-	
+
 	$e="nr30$i";
-	
+
 	$e1=$$e;
-	
+
 	$ab80=mysql_query("SELECT  cena from przedmiot where nr='$e1'",$db);
-		
+
 		list($cena51)=mysql_Fetch_Row($ab80);
-		
-	
+
+
 	$il3="ilosc30$i";
 	$il4=$$il3;
 	$cena57+=$cena51*$il4;
-	
-	
+
+
 	$r="rozmiar30$i";
 	$r1=$$r;
-	
-	
-	
-   $ab72=mysql_query("INSERT INTO `zamowienia` (`lp`,`nrztabprzedm`,`nradr`,`ilosc`,`rozmiar`,`data`,`dozaplaty`,`kodprzel`,`realizacja`) 
-   VALUES('','$e1','$nradr','$il4','$r1','$data1','$cena51','$kodprzelewu','')",$db);
-  
 
-	
+
+
+   $ab72=mysql_query("INSERT INTO `zamowienia` (`lp`,`nrztabprzedm`,`nradr`,`ilosc`,`rozmiar`,`data`,`dozaplaty`,`kodprzel`,`realizacja`)
+   VALUES('','$e1','$nradr','$il4','$r1','$data1','$cena51','$kodprzelewu','')",$db);
+
+
+
 	};
-	
-   
-   
+
+
+
    ?>
-   <form ACTION="index1.php">     
+   <form ACTION="index1.php">
    <?
    $wyczysckosz="tak";
    $destroy="yes";
    ?>
    <center>
-   
+
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #99FFFF">
-   Dokonano zamówienia.<br>
-      Potwierdzenie zamówienia zosta³o wys³ane emailem na podane konto.<br>
-   Dziêkujemy za zakupy w naszym sklepie.<br><br>
+   Dokonano zamï¿½wienia.<br>
+      Potwierdzenie zamï¿½wienia zostaï¿½o wysï¿½ane emailem na podane konto.<br>
+   Dziï¿½kujemy za zakupy w naszym sklepie.<br><br>
    </SPAN>
-   <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT="WWW.SKULLS.PL"><br>
+   <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT=""><br>
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #FF99FF">
-   Wp³aty prosimy dokonywaæ na konto:<br>
+   Wpï¿½aty prosimy dokonywaï¿½ na konto:<br>
    </SPAN>
    <table border=1 STYLE="border: 1px dotted #0099FF;">
    <tr>
    <TD ALIGN="LEFT" VALIGN="TOP">
    <SPAN STYLE=" font-family: Times New Roman; font-size: 18px; color: #99FFFF; font-weight: bold">
-   Poni¿sze dane proszê sobie zanotowaæ, lub zapisaæ na dysku. Zostan± one tak¿e wys³ane na podany przez pañstwa e-mail.</SPAN>
+   Poniï¿½sze dane proszï¿½ sobie zanotowaï¿½, lub zapisaï¿½ na dysku. Zostanï¿½ one takï¿½e wysï¿½ane na podany przez paï¿½stwa e-mail.</SPAN>
    <br><br>
    Nazwa odbiorcy:<br>
-   Katarzyna Kurzak<br>
-   41-909 Bytom ul. Cyryla i Metodego 62/17 &nbsp &nbsp<br><br>
-   
+   <br>
+
    Nr konta:<br>
-   30 8471 0000 0017 4424 9000 0001<br><br>
-   
-   Bank Spó³dzielczy Bytom<br><br>
+   <br>
+
+   <br>
       <?
    $cena57+=4;
    ?>
-   Kwota: <?echo$cena57?> z³<br><br>
-   Tytu³em: Zamowienie nr: <?echo$kodprzelewu?>
-   
-   
+   Kwota: <?echo$cena57?> zï¿½<br><br>
+   Tytuï¿½em: Zamowienie nr: <?echo$kodprzelewu?>
+
+
    </TD>
    <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="540" HEIGHT="360" BACKGROUND="index/grafiki/blankiet.jpg">
    <TABLE CELLSPACING="4" CELLPADDING="3" BORDER="0" STYLE="font-family: Times New Roman; font-size: 16px; color: #000000; font-weight: bold">
    <tr>
    <TD ALIGN="LEFT" VALIGN="TOP">
-   &nbsp &nbsp Katarzyna Kurzak 41-909 Bytom
+   &nbsp &nbsp Odbiorca
    </TD>
    </TR>
    <tr>
@@ -676,7 +675,7 @@ function onmouseover_1() {
    </TR>
    <tr>
    <td>
-   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <?echo$cena57?>   
+   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <?echo$cena57?>
    </TD>
    </TR>
    <tr>
@@ -711,43 +710,41 @@ function onmouseover_1() {
    </TD>
    </TR>
    </TABLE>
-   
+
    </TD>
    </TR>
    </TABLE>
    <SPAN STYLE=" font-family: Times New Roman; font-size: 14px; color: #CCFF99">
-   Natychmiast po zaksiêgowaniu wp³aty wy¶lemy zamówione przedmioty na Pañstwa adres.<br>
-   Z regu³y trwa to od 2 do 7 dni roboczych.<br>
-   W przypadku wiêkszych zamówieñ bêdziemy siê kontaktowaæ z Pañstwem telefonicznie.<br>
-   Na wp³atê czekamy 14 dni. Pó¼niej zamówienie zostaje anulowane.
-   ¯yczymy udanych zakupów.
-   
+   Natychmiast po zaksiï¿½gowaniu wpï¿½aty wyï¿½lemy zamï¿½wione przedmioty na Paï¿½stwa adres.<br>
+
+   ï¿½yczymy udanych zakupï¿½w.
+
    </SPAN>
    <?
-   $message="Zamowienie Skulls.pl. \n Czekamy na wplate od Panstwa na konto: \n Nazwa odbiorcy: \n Katarzyna Kurzak 41-909 Bytom ul. Cyryla i Metodego 62/17 \n Nr konta: 30 8471 0000 0017 4424 9000 0001 \n Bank Spó³dzielczy Bytom Kwota: $cena57 z³. \n Tytu³em: Zamowienie nr: $kodprzelewu \n\n        Dziêkujemy za zakupy w naszym sklepie. \n Zapraszamy ponownie \n \n www.skulls.pl";
-   mail($email, 'SKULLS Potwierdzenie', $message,
-     "From: admin@akulls.nazwa.pl",
-     "-fadmin@skulls.nazwa.pl");
+   $message="Zamowienie Skulls.pl.  $cena57 zï¿½. \n Tytuï¿½em: Zamowienie nr: $kodprzelewu \n\n ";
+   mail($email, 'Potwierdzenie', $message,
+     "From: admin@",
+     "-fadmin@");
 
-   
-   ?>  
-   
+
+   ?>
+
    <br><br>
    <input TYPE="hidden" name="wyczysckosz" value="<?echo$wyczysckosz?>">
    <input TYPE="hidden" name="destroy" value="<?echo$destroy?>">
-   <input TYPE="submit" name="powrot1" value="Powrót do sklepu">
-   
+   <input TYPE="submit" name="powrot1" value="Powrï¿½t do sklepu">
+
    </center>
    </FORM>
-   
+
    <?
-   
-   
 
 
-   
-   
-      
+
+
+
+
+
    return;
    };
 
@@ -759,71 +756,71 @@ function onmouseover_1() {
 //REALIZACJA ZAMOWIENIA BEZ LOGOWANIA ZA POBRANIEM
    if($potw1!=""&&$submitcheck1!=""&&$zaplata=="zapobraniem")
    {
-   
+
    $submitcheck1="";
    $cena57=0;
-   
-   
-   $ab65=mysql_query("INSERT INTO adresy (nr,haslo,login,imie,nazwisko,kodpoczt,miescow,ulica,nrd,nrm,tel,email) VALUES ('','bez has³a', 'bez logowania', '$imie', '$nazwisko', '$kodp', '$miejscow', '$ulica', '$nrd', '$nrm', '$tel', '$email')",$db);
-   
-   
+
+
+   $ab65=mysql_query("INSERT INTO adresy (nr,haslo,login,imie,nazwisko,kodpoczt,miescow,ulica,nrd,nrm,tel,email) VALUES ('','bez hasï¿½a', 'bez logowania', '$imie', '$nazwisko', '$kodp', '$miejscow', '$ulica', '$nrd', '$nrm', '$tel', '$email')",$db);
+
+
    $ab71=mysql_query("select nr from adresy where imie='$imie'&&nazwisko='$nazwisko'&&kodpoczt='$kodp'&&miescow='$miejscow'&&ulica='$ulica'&&nrd='$nrd'",$db);
-   
+
  					list($nradr)=mysql_Fetch_Row($ab71);
-  
-   
-   
+
+
+
    $data1=date("y,m,d");
-	
-   
- 					
-   
-   
-   
-      
+
+
+
+
+
+
+
 	for($i=1;$i<=$koszyk1;$i++)
 	{
-	
+
 	$e="nr30$i";
-	
+
 	$e1=$$e;
-	
+
 	$ab80=mysql_query("SELECT  cena from przedmiot where nr='$e1'",$db);
-		
+
 		list($cena51)=mysql_Fetch_Row($ab80);
-		
-	
+
+
 	$il3="ilosc30$i";
 	$il4=$$il3;
 	$cena57+=$cena51*$il4;
-	
-	
+
+
 	$r="rozmiar30$i";
 	$r1=$$r;
-	
-	
-	
-   $ab72=mysql_query("INSERT INTO `zamowienia` (`lp`,`nrztabprzedm`,`nradr`,`ilosc`,`rozmiar`,`data`,`dozaplaty`,`kodprzel`,`realizacja`) 
+
+
+
+   $ab72=mysql_query("INSERT INTO `zamowienia` (`lp`,`nrztabprzedm`,`nradr`,`ilosc`,`rozmiar`,`data`,`dozaplaty`,`kodprzel`,`realizacja`)
    VALUES('','$e1','$nradr','$il4','$r1','$data1','$cena51','zapobraniem','')",$db);
-  
+
 
 
 	};
-	
-   
+
+
    ?>
-   
-   <form ACTION="index1.php">     
+
+   <form ACTION="index1.php">
    <?
    $wyczysckosz="tak";
    $destroy="yes";
    ?>
    <center>
-   
+
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #99FFFF">
-   Dokonano zamówienia.<br>
-      Potwierdzenie zamówienia zosta³o wys³ane emailem na podane konto.<br>
-   Dziêkujemy za zakupy w naszym sklepie.<br><br>
+   Dokonano zamï¿½wienia.<br>
+      Potwierdzenie zamï¿½wienia zostaï¿½o wysï¿½ane emailem na podane konto.<br>
+   Dziï¿½kujemy za zakupy w naszym sklepie.<br><br>
    </SPAN>
    <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT="WWW.SKULLS.PL"><br>
    <SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #FF99FF">
@@ -831,35 +828,35 @@ function onmouseover_1() {
    $cena57+=9;
    ?>
    <br><br>
-   Do zap³aty bêdzie: <?echo$cena57?> z³. przy odbiorze.<br><br>
-   
-   ¯yczymy mi³ego dnia.
+   Do zapï¿½aty bï¿½dzie: <?echo$cena57?> zï¿½. przy odbiorze.<br><br>
+
+   ï¿½yczymy miï¿½ego dnia.
    </SPAN>
    <?
-   $message="Zamowienie Skulls.pl. \n Zamówienie wlasnie jest w trakcie realizacji.\n Do zaplaty bêdzie $cena57 przy odbiorze. \n\n\n        Dziêkujemy za zakupy w naszym sklepie. \n Zapraszamy ponownie \n \n www.skulls.pl";
-   mail($email, 'SKULLS Potwierdzenie', $message,
-     "From: admin@akulls.nazwa.pl",
-     "-fadmin@skulls.nazwa.pl");
+   $message="Zamowienie \n  $cena57 przy odbiorze. \n\n\n        Dziï¿½kujemy za zakupy w naszym sklepie. \n Zapraszamy ponownie \n \n www.skulls.pl";
+   mail($email, 'Potwierdzenie', $message,
+     "From: admin@",
+     "-fadmin@");
 
-   
-   ?>  
-   
+
+   ?>
+
    <br><br>
    <input TYPE="hidden" name="wyczysckosz" value="<?echo$wyczysckosz?>">
    <input TYPE="hidden" name="destroy" value="<?echo$destroy?>">
-   <input TYPE="submit" name="powrot1" value="Powrót do sklepu">
-   
+   <input TYPE="submit" name="powrot1" value="Powrï¿½t do sklepu">
+
    </center>
    </FORM>
-   
+
    <?
-   
-   
 
 
-   
-   
-      
+
+
+
+
+
    return;
    };
 
@@ -903,7 +900,7 @@ function onmouseover_1() {
 
 <tr>
 
-<!-- NAG£ÓWEK, PIERWSZA KOMÓRKA -->
+<!-- NAGï¿½ï¿½WEK, PIERWSZA KOMï¿½RKA -->
 <TD ALIGN="CENTER" WIDTH="800" HEIGHT="90" COLSPAN="3" BACKGROUND="index/grafiki/top.jpg";>
 
 <SPAN STYLE=" font-family: Franklin Gothic Medium; font-size: 28pt; font-weight: bold; font-style: italic; color: #000000">
@@ -927,51 +924,51 @@ function onmouseover_1() {
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 11px; color: #000000">
 	Kolekcje:
 	</SPAN>
-	
+
 	</Td>
 	</TR>
 	<tr>
 	<TD ALIGN="LEFT">
-	
-	
+
+
 	<?
 	$klima="mroczny";
 
-  		$lb=mysql_query("SELECT kolekcja from kolekcje order by kolekcja",$db); 
+  		$lb=mysql_query("SELECT kolekcja from kolekcje order by kolekcja",$db);
 //		where klimat='$klima' order by nr",$db);
-		
+
 		while(list($kolekcja)=mysql_Fetch_Row($lb))
 		{
 		?>
-		  										   	
-		
+
+
 		 &nbsp <A HREF=index1.php?kolekcja01=<?echo$kolekcja?>&&do1=wyzeroj&&do2=tak ><SPAN STYLE=' font-family: Times New Roman; font-size: 12pt; color: #FFFFFF'><?echo$kolekcja?><br></span></A>
 		<?
 		};
 		?>
-		
+
 	</td>
 	</TR>
 	<tr>
 	<TD ALIGN="CENTER" VALIGN="MIDDLE" WIDTH="100" HEIGHT="15" BACKGROUND="index/grafiki/banery/mroczne/table1.gif">
-	
+
 	</TD>
 	</TR>
 	<tr>
 	<TD ALIGN="LEFT">
-	
-		
+
+
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 10pt; color: #FF0000">
 
-	
-	&nbsp <A HREF="index1.php?rozklad=yes" TARGET="_top" TITLE="Rozk³ad jazdy" STYLE="font-family: Times New Roman; font-size: 12px">Rozk³ad jazdy </A><br>
-	&nbsp <A HREF="index1.php?impry=yes" NAME="Zdjêcia z imprez" TARGET="_top" TITLE="Zdjêcia z imprez" STYLE="font-size: 12px; font-family: Times New Roman">Zdjêcia z imprez</A>
-	
+
+	&nbsp <A HREF="index1.php?rozklad=yes" TARGET="_top" TITLE="Rozkï¿½ad jazdy" STYLE="font-family: Times New Roman; font-size: 12px">Rozkï¿½ad jazdy </A><br>
+	&nbsp <A HREF="index1.php?impry=yes" NAME="Zdjï¿½cia z imprez" TARGET="_top" TITLE="Zdjï¿½cia z imprez" STYLE="font-size: 12px; font-family: Times New Roman">Zdjï¿½cia z imprez</A>
+
 	</TD>
 	</TR>
 	<tr>
 	<TD ALIGN="CENTER" VALIGN="MIDDLE" WIDTH="100" HEIGHT="15" BACKGROUND="index/grafiki/banery/mroczne/table1.gif">
-	
+
 	</TD>
 	</TR>
 	<tr>
@@ -980,23 +977,23 @@ function onmouseover_1() {
 	&nbsp <A HREF="index1.php?regul=regul" TITLE="Regulamin" STYLE="font-family: Times New Roman; font-size: 12px">Regulamin</A>
 	</TD>
 	</TR>
-	
-	<!-- od¶wie¿anie -->
+
+	<!-- odï¿½wieï¿½anie -->
 	<tr>
 	<TD ALIGN="CENTER" VALIGN="MIDDLE" WIDTH="100" HEIGHT="15" BACKGROUND="index/grafiki/banery/mroczne/table1.gif">
 	</TD>
 	</TR>
 	<tr>
 	<td>
-	&nbsp <A HREF="index1.php?destroy=yes" TARGET="_top" TITLE="Od¶wie¿" STYLE="font-family: Times New Roman; font-size: 14px; font-weight: bold; color: #FF99FF">Od¶wie¿</A><br>
-	&nbsp <A HREF="mailto:biuro@skulls.nazwa.pl" STYLE="font-family: Times New Roman; font-size: 12px; color: #FFFFFF">Napisz do nas</A>
+	&nbsp <A HREF="index1.php?destroy=yes" TARGET="_top" TITLE="Odï¿½wieï¿½" STYLE="font-family: Times New Roman; font-size: 14px; font-weight: bold; color: #FF99FF">Odï¿½wieï¿½</A><br>
+	&nbsp <A HREF="mailto:biuro@" STYLE="font-family: Times New Roman; font-size: 12px; color: #FFFFFF">Napisz do nas</A>
 	</TD>
 	</TR>
 	<tr>
-	
-	
-		
-	
+
+
+
+
 	<?
 	if($koszyk1!="")
 	{
@@ -1008,7 +1005,7 @@ function onmouseover_1() {
 	<TABLE  rules=rows WIDTH="100%" BORDER="0" STYLE="border: 1px dotted #0099FF;">   <!--  CELLSPACING="0" CELLPADDING="0" BORDER="1" FRAME="VOID" RULES="ROWS" -->
 	<tr>
 	<TD ALIGN="LEFT" VALIGN="MIDDLE">
-	<IMG SRC="index/grafiki/banery/mroczne/koszykm.gif" WIDTH="31" HEIGHT="27" BORDER="0" ALT="Rozmiar: 1192 bajtów">
+	<IMG SRC="index/grafiki/banery/mroczne/koszykm.gif" WIDTH="31" HEIGHT="27" BORDER="0" ALT="Rozmiar: 1192 bajtï¿½w">
 	</td>
 	<TD ALIGN="RIGHT" VALIGN="MIDDLE">
 	<center>
@@ -1018,10 +1015,10 @@ function onmouseover_1() {
 	</tr>
 	<tr>
 	<TD ALIGN="LEFT" COLSPAN="2" STYLE="border: 1px dotted #0099FF;">
-	
+
 	<TABLE ALIGN="CENTER" VALIGN="TOP" CELLSPACING="0" CELLPADDING="0" BORDER="0">
-	
-	
+
+
 	<?
 	for($i=1;$i<=$koszyk1;$i++)
 	{
@@ -1033,29 +1030,29 @@ function onmouseover_1() {
 	<td ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
 	<?
 	$e="nr30$i";
-	
-	
+
+
 	$e1=$$e;
 	$ab40=mysql_query("SELECT  nazwa,cena from przedmiot where nr='$e1'",$db);
-		
+
 		list($nazwa40,$cena40)=mysql_Fetch_Row($ab40);
-		
+
 	echo$nazwa40;
 	$il="ilosc30$i";
 	$il1=$$il;
 	$cena20+=$cena40*$il1;
-	
+
 	?>
 	</TD>
-	
+
 	</TR>
 	<?
 	};
 	?>
-	
+
 	</TABLE>
-	
-	
+
+
 	</TD>
 	</TR>
 	<tr>
@@ -1063,14 +1060,14 @@ function onmouseover_1() {
 	Koszt:
 	</TD>
 	<TD ALIGN="RIGHT">
-	<?echo$cena20?> z³.
+	<?echo$cena20?> zï¿½.
 	</td>
 	</tr>
 	<tr>
 	<TD ALIGN="CENTER" COLSPAN="2">
 	<form ACTION="index1.php">
-	<INPUT TYPE="SUBMIT" NAME="koszczeg" VALUE="Szczegó³y" STYLE="font-family: Times New Roman; font-size: 12px">
-	
+	<INPUT TYPE="SUBMIT" NAME="koszczeg" VALUE="Szczegï¿½ï¿½y" STYLE="font-family: Times New Roman; font-size: 12px">
+
 	</td>
 	</tr>
 	<tr>
@@ -1078,13 +1075,13 @@ function onmouseover_1() {
 	<tr>
 	<TD ALIGN="CENTER" COLSPAN="2">
 	<form ACTION="index1.php">
-	<INPUT TYPE="SUBMIT" NAME="wyczysckosz" VALUE="Wyczy¶æ" STYLE="font-family: Times New Roman; font-size: 10px">
+	<INPUT TYPE="SUBMIT" NAME="wyczysckosz" VALUE="Wyczyï¿½ï¿½" STYLE="font-family: Times New Roman; font-size: 10px">
 	</td>
 	</tr>
-	
+
 	</td>
 	</tr>
-	
+
 	<tr>
 	<td ALIGN="CENTER" COLSPAN="2">
 	<?if ($zamow==""&&$newuser==""&&$login=="")
@@ -1098,18 +1095,18 @@ function onmouseover_1() {
 	</TD>
 	</TR>
 	</TABLE>
-	
-	
+
+
 	</TD>
 	<?
 	};
-	?>	
-	
-	
+	?>
+
+
 	</TR>
-	
-	
-	
+
+
+
 	<!-- LINKI -->
 	<tr>
 	<TD ALIGN="CENTER" VALIGN="MIDDLE" WIDTH="100" HEIGHT="15" BACKGROUND="index/grafiki/banery/mroczne/table1.gif">
@@ -1118,13 +1115,13 @@ function onmouseover_1() {
 	<tr>
 	<td>
 	<A HREF="http://www.borntoride.com/index.html" TARGET="_blank" TITLE="Born to ride" STYLE="font-family: Times New Roman; font-size: 14px; font-weight: bold; color: #FF99FF"><IMG SRC="index/grafiki/link1.gif" BORDER="0" ALT=""></A>
-	
+
 	</TD>
 	</TR>
 	<tr>
-	
+
 	</table>
-	
+
 
 
 </TD>
@@ -1132,7 +1129,7 @@ function onmouseover_1() {
 
 <!-- GLOWNA KOMORKA	 -->
 
-<TD ALIGN="LEFT" VALIGN="TOP" WIDTH="580" STYLE="border: 1px dotted #0099FF";> 
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH="580" STYLE="border: 1px dotted #0099FF";>
 
 <IMG SRC="index/grafiki/napis1.gif" WIDTH="580" HEIGHT="51" BORDER="0" ALT="WWW.SKULLS.PL">
 
@@ -1164,7 +1161,7 @@ function onmouseover_1() {
 
 
 <?
-//WY¦WIETLANIE PRODUKTÓW:
+//WYï¿½WIETLANIE PRODUKTï¿½W:
 
 
 if ($dane02!=""&&$dane02!="ofirm"&&$dane02!="regul"&&$koszczeg==""&&$zamow==""&&$login==""&&$zambezlog==""&&$zamzlog=="")
@@ -1172,13 +1169,13 @@ if ($dane02!=""&&$dane02!="ofirm"&&$dane02!="regul"&&$koszczeg==""&&$zamow==""&&
 
 $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,status,cena
 				from przedmiot where nr='$dane02' order by nazwa",$db);
-		
+
 		list($nazwa10,$kolekcja10,$stan10,$katalog10,$nazwa_p10,$nazwa_p210,$opis10,$status10,$cena10)=mysql_Fetch_Row($ab10);
-		
-		
-		// echo"$nazwa10,$kolekjca10,$stan10,$katalog10,$nazwa_p10,$nazwa_p210,$opis10,$status10";		
+
+
+		// echo"$nazwa10,$kolekjca10,$stan10,$katalog10,$nazwa_p10,$nazwa_p210,$opis10,$status10";
 		?>
-		<br>		
+		<br>
 		<TABLE WIDTH="580" BORDER="0">
 		<tr>
 		<TD ALIGN="CENTER" VALIGN="MIDDLE" WIDTH="420">
@@ -1198,7 +1195,7 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		?>
 		</TD>
 		<TD ALIGN="LEFT" VALIGN="TOP" WIDTH="160">
-		
+
 		<TABLE VALIGN="TOP" WIDTH="160" BORDER="0">
 		<tr>
 		<TD ALIGN="LEFT" VALIGN="TOP">
@@ -1214,7 +1211,7 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		</span>
 		</TD>
 		</TR>
-<form ACTION="index1.php">		
+<form ACTION="index1.php">
 		<?
 		if ($status10=="koszulka")
 		{
@@ -1230,7 +1227,7 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		</td>
 		<td>
 		<SPAN STYLE=" font-family: Times New Roman; font-size: 12px; color: #FFCCFF">
-		&nbsp&nbsp&nbsp Ilo¶æ:
+		&nbsp&nbsp&nbsp Iloï¿½ï¿½:
 		</SPAN>
 		</td>
 		</tr>
@@ -1244,7 +1241,7 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		<option VALUE="XXL">XXL</OPTION>
 		<option VALUE="XXXL">XXXL</OPTION>
 		</SELECT>
-		</td> 
+		</td>
 		<td>
 		&nbsp&nbsp <SELECT NAME="ilosc10" STYLE="font-family: Times New Roman; font-size: 10px; color: #FF0000">
 		<?
@@ -1266,7 +1263,7 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		<tr>
 		<td>
 		<SPAN STYLE=" font-family: Times New Roman; font-size: 12px; color: #FFCCFF">
-		Ilo¶æ:<br>
+		Iloï¿½ï¿½:<br>
 		</SPAN>
 		<SELECT NAME="ilosc10" STYLE="font-family: Times New Roman; font-size: 10px; color: #FF0000">
 		<?
@@ -1280,78 +1277,78 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		</tr>
 		<?
 		};
-		?>				
-		
-		
+		?>
+
+
 		<tr>
 		<td>
 		<SPAN STYLE=" font-family: Times New Roman; font-size: 12px">
 		<?
 		echo "$opis10";
 		?>
-		</SPAN>	
+		</SPAN>
 		</TD>
 		</TR>
 		<tr>
 		<td>
 		<SPAN STYLE=" font-family: Times New Roman; font-size: 12px">
-		Cena: <?echo$cena10?> z³.
+		Cena: <?echo$cena10?> zï¿½.
 		</span>
 		</TD>
 		</TR>
 		<tr>
 		<td>
 		<input TYPE="hidden" name="nr20" value="<?echo$dane02?>">
-		<INPUT TYPE="SUBMIT" NAME="dokosz" VALUE="Do koszyka" STYLE="font-family: Times New Roman; font-size: 12px">		
-		</FORM>		
+		<INPUT TYPE="SUBMIT" NAME="dokosz" VALUE="Do koszyka" STYLE="font-family: Times New Roman; font-size: 12px">
+		</FORM>
 		</TD>
 		</TR>
-		
-		
+
+
 		</TABLE>
-		
+
 		</TD>
 		</TR>
 		<tr>
-		
+
 		<TD ALIGN="CENTER" VALIGN="TOP">
-		
+
 		<?
 		if ($status10=="koszulka")
 		{
 		?>
-		<A HREF="index1.php?widok=przod" TITLE="Przód"><SPAN STYLE=" font-family: Times New Roman; font-size: 12px; color: #66CCFF">
-		Przód	   
+		<A HREF="index1.php?widok=przod" TITLE="Przï¿½d"><SPAN STYLE=" font-family: Times New Roman; font-size: 12px; color: #66CCFF">
+		Przï¿½d
 		</SPAN>
 		</A>, &nbsp
-		<A HREF="index1.php?widok=tyl" TITLE="Ty³">
+		<A HREF="index1.php?widok=tyl" TITLE="Tyï¿½">
 		<SPAN STYLE=" font-family: Times New Roman; font-size: 12px; color: #66CCFF">
-		Ty³
+		Tyï¿½
 		</span>
-		</A>		
+		</A>
 		<?
 		};
 		?>
-		
+
 		</TD>
 		<td>
 		</TD>
 		</TR>
 		</TABLE>
-		
+
 
 
 <?
 }
 
-//        KONIEC WYSWIETLANIA PRODUKTOW 
+//        KONIEC WYSWIETLANIA PRODUKTOW
 
 
-//wype³niony formularz
+//wypeï¿½niony formularz
 
 	if($zambezlog!="")
 	{
-	 				  	
+
 	 	if($nazwisko!=""&&$imie!=""&&$kodp!=""&&$miejscow!=""&&$ulica!=""&&$nrd!=""&&$tel!=""&&$zaplata!=""&&$email!=""&&$zalogowany=="")
 		{
 		?>
@@ -1361,7 +1358,7 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		?>
 		<center>
 		<SPAN STYLE=" font-family: Terminal; font-size: 18px; color: #6699FF">
-		Kupuj±cy:
+		Kupujï¿½cy:
 		</SPAN>
 		<TABLE ALIGN="CENTER" CELLSPACING="1" BORDER="0">
 		<tr>
@@ -1386,42 +1383,42 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		</TR>
 		<tr>
 		<td>
-		<b>Rodzaj zap³aty: <?echo$zaplata?></b><input TYPE="hidden" name="zaplata" value="<?echo$zaplata?>">
+		<b>Rodzaj zapï¿½aty: <?echo$zaplata?></b><input TYPE="hidden" name="zaplata" value="<?echo$zaplata?>">
 		</TD>
 		</TR>
 		</TABLE>
 		<SPAN STYLE=" font-family: Terminal; font-size: 18px; color: #6699FF">
-		Zamawia nastêpuj±ce przedmioty:
+		Zamawia nastï¿½pujï¿½ce przedmioty:
 		</span>
-		</center>		
+		</center>
 		<?
 		}
 		else
 		{
-		$komunikat="WYPE£NIJ UWA¯NIE WYMAGANE POLA!";
+		$komunikat="WYPEï¿½NIJ UWAï¿½NIE WYMAGANE POLA!";
 		$zamow="tak";
-		};	
-	
-	
+		};
+
+
 	};
 
 
 
-	
-	
-	// WYPE£NIONY FORMULARZ Z LOGOWANIEM
-	
-	
+
+
+	// WYPEï¿½NIONY FORMULARZ Z LOGOWANIEM
+
+
 	if ($zamzlog!="")
 	{
 	?>
 	<center>
-	
-	
-	
-	
+
+
+
+
 			<SPAN STYLE=" font-family: Terminal; font-size: 18px; color: #6699FF">
-		Kupuj±cy:
+		Kupujï¿½cy:
 		</SPAN>
 		<TABLE ALIGN="CENTER" CELLSPACING="1" BORDER="0">
 		<tr>
@@ -1446,24 +1443,24 @@ $ab10=mysql_query("SELECT  nazwa,kolekcja,STAN,katalog,nazwa_p,nazwa_p2,opis,sta
 		</TR>
 		<tr>
 		<td>
-		<b>Rodzaj zap³aty: <?echo$zaplata?></b><input TYPE="hidden" name="zaplata" value="<?echo$zaplata?>">
+		<b>Rodzaj zapï¿½aty: <?echo$zaplata?></b><input TYPE="hidden" name="zaplata" value="<?echo$zaplata?>">
 		</TD>
 		</TR>
 		</TABLE>
 		<SPAN STYLE=" font-family: Terminal; font-size: 18px; color: #6699FF">
-		Zamawia nastêpuj±ce przedmioty:
+		Zamawia nastï¿½pujï¿½ce przedmioty:
 		</span>
 		</center>
-	
-	
-	
-	
-	
+
+
+
+
+
 	<?
 	};
 
 
-// WY¦WIETLANIE SZCZEGU£ÓW Z  KOSZYKA
+// WYï¿½WIETLANIE SZCZEGUï¿½ï¿½W Z  KOSZYKA
 
 if($koszczeg!=""||$zamow!=""||$login!=""||$zambezlog!=""||$zamzlog!="")
 {
@@ -1475,24 +1472,24 @@ $cena50=0;
 	lp &nbsp
 	</TD>
 	<TD ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
-	nazwa przedmiotu: &nbsp 
+	nazwa przedmiotu: &nbsp
 	</TD>
 	<TD ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
-	rozmiar &nbsp 
+	rozmiar &nbsp
 	</TD>
 	<TD ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
-	ilo¶æ &nbsp 
+	iloï¿½ï¿½ &nbsp
 	</TD>
 	<TD ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
-	przedmiot &nbsp 
+	przedmiot &nbsp
 	</TD>
 	<TD ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
-	cena /szt. &nbsp 
+	cena /szt. &nbsp
 	</TD>
-	
-	
-	</TR>   	
-	
+
+
+	</TR>
+
 	<?
 	for($i=1;$i<=$koszyk1;$i++)
 	{
@@ -1504,27 +1501,27 @@ $cena50=0;
 	<td ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
 	<?
 	$e="nr30$i";
-	
-	
+
+
 	$e1=$$e;
-	
-	
+
+
 	$ab50=mysql_query("SELECT  nazwa,status,cena from przedmiot where nr='$e1'",$db);
-		
+
 		list($nazwa50,$status50,$cena51)=mysql_Fetch_Row($ab50);
-		
+
 	echo$nazwa50;
 	$il3="ilosc30$i";
 	$il4=$$il3;
 	$cena50+=$cena51*$il4;
-	
+
 	?>
 	</TD>
-	
+
  	<TD ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
 	<?
 	$r="rozmiar30$i";
-	
+
 	echo$$r;
 	?> &nbsp
 	</td>
@@ -1532,29 +1529,29 @@ $cena50=0;
 	<?
 	$il="ilosc30$i";
 	echo $$il;
-	
+
 	?>
 
-	
-	
+
+
 	</TD>
 	<TD ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
 	<?
-	
+
 	echo $status50;
-	
+
 	?> &nbsp
 
-	
-	
-	</TD>  
+
+
+	</TD>
 	<TD ALIGN="LEFT" VALIGN="TOP" STYLE="border: 1px dotted #0099FF;">
 	<?
 	echo $cena51;
 	?>
-	&nbsp z³.	
-	</TD>  
-	
+	&nbsp zï¿½.
+	</TD>
+
 	</TR>
 	<?
 	};
@@ -1570,23 +1567,23 @@ $cena50=0;
 	</TD>
 	<td>
 	</TD>
-	
+
 	<TD ALIGN="CENTER" VALIGN="MIDDLE" STYLE="border: 1px dotted #0099FF;">
 	Koszt w sumie:<br>
-	<?echo$cena50?> z³.
+	<?echo$cena50?> zï¿½.
 	</TD>
-	
+
 	</TR>
-	
+
 	</TABLE>
 	<center>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 13px">
 
-	Prosimy przeczytaæ <A HREF="regulam.php?regul=yes" TARGET="_blank" TITLE="regulamin">regulamin zakupów</A>.
+	Prosimy przeczytaï¿½ <A HREF="regulam.php?regul=yes" TARGET="_blank" TITLE="regulamin">regulamin zakupï¿½w</A>.
 	Masz pytania? <A HREF="mailto:biuro@skulls.nazwa.pl" STYLE="font-family: Times New Roman; font-size: 12px; color: #FFFFFF">Napisz do nas</A>. Lub tel 0-607-196-453</SPAN>
 	</CENTER>
-	
-	
+
+
 	<?
 //	Potwierdzenie zamawiania z logowaniem
 
@@ -1595,41 +1592,41 @@ $cena50=0;
 	if($zaplata=="zapobraniem")
 	{
 	$cena54=$cena50+9;
-	echo "<center>+ koszt wysylki 9z³. (Za pobraniem).<SPAN STYLE=' font-family: Times New Roman; color: #FF99FF; font-size: 16px'> W sumie do zap³aty $cena54 z³.<br><br></SPAN></CENTER>";
+	echo "<center>+ koszt wysylki 9zï¿½. (Za pobraniem).<SPAN STYLE=' font-family: Times New Roman; color: #FF99FF; font-size: 16px'> W sumie do zapï¿½aty $cena54 zï¿½.<br><br></SPAN></CENTER>";
 	};
-	
+
 	if($zaplata=="przelew")
 	{
 	$cena54=$cena50+4;
-	echo "<center>+ koszt wysylki 4z³. (Przelewem).<SPAN STYLE=' font-family: Times New Roman; color: #FF99FF; font-size: 16px'> W sumie do zap³aty $cena54 z³.<br><br></SPAN></CENTER>";
+	echo "<center>+ koszt wysylki 4zï¿½. (Przelewem).<SPAN STYLE=' font-family: Times New Roman; color: #FF99FF; font-size: 16px'> W sumie do zapï¿½aty $cena54 zï¿½.<br><br></SPAN></CENTER>";
 	?>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #33FFFF">
-	Wp³atê traktujemy jako potwierdzenie zamówienia z pañstwa strony.
-	Od dnia zamówienia czekamy 14 dni na przelew, potem zamówienie uznaje siê za anulowane (zostanie wys³any e-mail).
-	Im szybciej wp³acisz tym szybciej przedmioty dotr± do Ciebie!!!
-	Je¿eli zechc± pañstwo zrezygnowaæ z zamówienia - nic prostrzego.
-	Wystarczy nie wp³aciæ pieniêdzy na nasze konto.
+	Wpï¿½atï¿½ traktujemy jako potwierdzenie zamï¿½wienia z paï¿½stwa strony.
+	Od dnia zamï¿½wienia czekamy 14 dni na przelew, potem zamï¿½wienie uznaje siï¿½ za anulowane (zostanie wysï¿½any e-mail).
+	Im szybciej wpï¿½acisz tym szybciej przedmioty dotrï¿½ do Ciebie!!!
+	Jeï¿½eli zechcï¿½ paï¿½stwo zrezygnowaï¿½ z zamï¿½wienia - nic prostrzego.
+	Wystarczy nie wpï¿½aciï¿½ pieniï¿½dzy na nasze konto.
 	</SPAN><center><br>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 18px; color: #FF99FF">
- 	Po naci¶niêciu potwierdzam otrzymaj± pañstwo nasze konto, oraz nr zamówienia, który koniecznie trzeba wpisaæ w rubryce "Tytu³em" aby¶my jak najszybciej rozpoznali wp³acaj±cego i jego zamówienie.</SPAN><br>
+ 	Po naciï¿½niï¿½ciu potwierdzam otrzymajï¿½ paï¿½stwo nasze konto, oraz nr zamï¿½wienia, ktï¿½ry koniecznie trzeba wpisaï¿½ w rubryce "Tytuï¿½em" abyï¿½my jak najszybciej rozpoznali wpï¿½acajï¿½cego i jego zamï¿½wienie.</SPAN><br>
 	<br>
-	
-	
-	
+
+
+
 	<?
 	$kodprzelewu=date(mdhis);
 	};
 	$checksubmit2="tak"
-	
+
 	?>
 	<form ACTION="index1.php">
 
 	<input TYPE="hidden" name="kodprzelewu" value="<?echo$kodprzelewu?>">
 	<input TYPE="hidden" name="zaplata" value="<?echo$zaplata?>">
-		
+
 	<center>
 	<br>
-	<INPUT TYPE="SUBMIT" NAME="wyczysckosz" VALUE="Wyczy¶æ zawarto¶æ koszyka" STYLE="font-family: Times New Roman; font-size: 12px"> &nbsp &nbsp	
+	<INPUT TYPE="SUBMIT" NAME="wyczysckosz" VALUE="Wyczyï¿½ï¿½ zawartoï¿½ï¿½ koszyka" STYLE="font-family: Times New Roman; font-size: 12px"> &nbsp &nbsp
 	<br><br>
 	<input TYPE="submit" name="zamow" value="<< wstecz"> &nbsp &nbsp
 	<input TYPE="submit" name="destroy" value="Wyloguj"> &nbsp &nbsp
@@ -1639,35 +1636,35 @@ $cena50=0;
 	<?
 	};
 	?>
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 	<?
 	if($zamzlog=="")
 	{
-	
+
 	if($zambezlog==""||$komunikat!="")
 	{
 	?>
 	<center>
 	<form ACTION="index1.php">
 	<br>
-	<INPUT TYPE="SUBMIT" NAME="wyczysckosz" VALUE="Wyczy¶æ zawarto¶æ koszyka" STYLE="font-family: Times New Roman; font-size: 12px"> &nbsp &nbsp
+	<INPUT TYPE="SUBMIT" NAME="wyczysckosz" VALUE="Wyczyï¿½ï¿½ zawartoï¿½ï¿½ koszyka" STYLE="font-family: Times New Roman; font-size: 12px"> &nbsp &nbsp
 	<?
 	if ($zamow==""&&$login=="")
 	{
-	
+
 	?>
 	<INPUT TYPE="SUBMIT" NAME="zamow" VALUE="Zamawiam" STYLE="font-family: Times New Roman; font-size: 12px">
 	<?
 	};
 	?>
-	</FORM> 
+	</FORM>
 	</CENTER>
 	<?
 	}
@@ -1675,8 +1672,8 @@ $cena50=0;
 	{
 	?>
 	<center>
-	
-	
+
+
 	<?
 	// bez logowania za pobraniem
 	if($zaplata=="zapobraniem")
@@ -1685,10 +1682,10 @@ $cena50=0;
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #33FFFF">
 	<?
 	$cena54=$cena50+9;
-	echo "+ koszt wysylki 9z³. (Za pobraniem).<SPAN STYLE=' font-family: Times New Roman; color: #FF99FF; font-size: 16px'> W sumie do zap³aty $cena54 z³.<br>Przy odbiorze.<br><br></SPAN>";
+	echo "+ koszt wysylki 9zï¿½. (Za pobraniem).<SPAN STYLE=' font-family: Times New Roman; color: #FF99FF; font-size: 16px'> W sumie do zapï¿½aty $cena54 zï¿½.<br>Przy odbiorze.<br><br></SPAN>";
 	$submitcheck1="tak";
 	?>
-	
+
 	<input TYPE="hidden" name="zaplata" value="<?echo$zaplata?>">
 	<input TYPE="submit" name="zamow" value="<< wstecz">
 	<INPUT TYPE="SUBMIT" NAME="potw1" VALUE="Potwierdzam" STYLE="font-family: Times New Roman; font-size: 16px">
@@ -1696,24 +1693,24 @@ $cena50=0;
 	</span>
 	<?
 	};
-	
-	
+
+
 	if($zaplata=="przelew")
 	{
 	$cena54=$cena50+4;
-	echo "+ koszt wysylki 4z³. (op³ata przelewem).<SPAN STYLE=' font-family: Times New Roman; color: #FF99FF; font-size: 16px'> W sumie do zap³aty $cena54 z³.<br><br></SPAN>";
+	echo "+ koszt wysylki 4zï¿½. (opï¿½ata przelewem).<SPAN STYLE=' font-family: Times New Roman; color: #FF99FF; font-size: 16px'> W sumie do zapï¿½aty $cena54 zï¿½.<br><br></SPAN>";
 	$kodprzelewu=date(mdhis);
 	?>
 	</center>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #33FFFF">
-	Wp³atê traktujemy jako potwierdzenie zamówienia z pañstwa strony.
-	Od dnia zamówienia czekamy 14 dni na przelew, potem zamówienie uznaje siê za anulowane (zostanie wys³any e-mail).
-	Im szybciej wp³acisz tym szybciej przedmioty dotr± do Ciebie!!!
-	Je¿eli zechc± pañstwo zrezygnowaæ z zamówienia - nic prostrzego.
-	Wystarczy nie wp³aciæ pieniêdzy na nasze konto.
+	Wpï¿½atï¿½ traktujemy jako potwierdzenie zamï¿½wienia z paï¿½stwa strony.
+	Od dnia zamï¿½wienia czekamy 14 dni na przelew, potem zamï¿½wienie uznaje siï¿½ za anulowane (zostanie wysï¿½any e-mail).
+	Im szybciej wpï¿½acisz tym szybciej przedmioty dotrï¿½ do Ciebie!!!
+	Jeï¿½eli zechcï¿½ paï¿½stwo zrezygnowaï¿½ z zamï¿½wienia - nic prostrzego.
+	Wystarczy nie wpï¿½aciï¿½ pieniï¿½dzy na nasze konto.
 	</SPAN><center><br>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 18px; color: #FF99FF">
- 	Po naci¶niêciu potwierdzam otrzymaj± pañstwo nasze konto, oraz nr zamówienia, który koniecznie trzeba wpisaæ w rubryce "Tytu³em" aby¶my jak najszybciej rozpoznali wp³acaj±cego i jego zamówienie.</SPAN><br>
+ 	Po naciï¿½niï¿½ciu potwierdzam otrzymajï¿½ paï¿½stwo nasze konto, oraz nr zamï¿½wienia, ktï¿½ry koniecznie trzeba wpisaï¿½ w rubryce "Tytuï¿½em" abyï¿½my jak najszybciej rozpoznali wpï¿½acajï¿½cego i jego zamï¿½wienie.</SPAN><br>
 	<br>
 	<input TYPE="hidden" name="zaplata" value="<?echo$zaplata?>">
 	<input TYPE="hidden" name="kodprzelewu" value="<?echo$kodprzelewu?>">
@@ -1725,100 +1722,100 @@ $cena50=0;
 	</center>
 	<?
 	};
-	
-	
+
+
 	};
-	
+
 	};
 	?>
-	
-	
-	
+
+
+
 	<!-- LOGOWANIE -->
-	
+
 	<?
 	if ($login!=""&&$login30=="")
 	{
 	?>
 	<form ACTION="index1.php">
-	
-	
+
+
 	<SPAN STYLE=" font-family: Times New Roman; color: #CCFFCC; font-size: 16px; font-weight: bold">
 	<?echo$komunikat1?>
 	</SPAN>
-	
+
 	<TABLE WIDTH="580" BORDER="0">
-	
+
 	<tr>
 	<td>
-	Login: 
+	Login:
 	</TD>
 	<td>
 	<input TYPE="text" name="login1" value="" MAXLENGTH="15">
 	</TD>
 	<TD ALIGN="CENTER">
-	<A HREF="newuser.php" TARGET="_blank" TITLE="Nowy u¿ytkownik" STYLE="color: #33FFFF; font-size: 16px; font-family: Times New Roman">Nowy u¿ytkownik, zarejestruj siê w 2 minuty</A>
+	<A HREF="newuser.php" TARGET="_blank" TITLE="Nowy uï¿½ytkownik" STYLE="color: #33FFFF; font-size: 16px; font-family: Times New Roman">Nowy uï¿½ytkownik, zarejestruj siï¿½ w 2 minuty</A>
 	</TD>
 	</TR>
 	<tr>
 	<td>
-	Has³o:
+	Hasï¿½o:
 	</td>
 	<td>
 	<input TYPE="password" name="haslo1" value="" MAXLENGTH="15">
 	</TD>
 	</TR>
-	
+
 	</table>
 	<center>
 	<br>
-	<INPUT TYPE="SUBMIT" name="wstecz1" value="<< Powrót"> &nbsp
+	<INPUT TYPE="SUBMIT" name="wstecz1" value="<< Powrï¿½t"> &nbsp
 	<INPUT TYPE="SUBMIT" name="login30" value="Zaloguj >>">
 	<br><br>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #CCCCFF">
-	Je¿eli jeste¶ zalogowanym u¿ytkownikiem, to masz dodatkowe mo¿liwo¶ci.<br>
-	Mo¿esz zamawiaæ przedmioty i p³aciæ dopiero przy odbiorze (za pobraniem).
+	Jeï¿½eli jesteï¿½ zalogowanym uï¿½ytkownikiem, to masz dodatkowe moï¿½liwoï¿½ci.<br>
+	Moï¿½esz zamawiaï¿½ przedmioty i pï¿½aciï¿½ dopiero przy odbiorze (za pobraniem).
 	</SPAN>
 	</center>
 	</FORM>
-	
-	
-	
+
+
+
 	<?
 	};
 	?>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
 	<?
-// FORMULARZ ZAMAWIANIA	
+// FORMULARZ ZAMAWIANIA
 	if($zamow!="")
 	{
-	
-	
+
+
 	if($zalogowany=="")
 	{
 	?>
 	<form ACTION="index1.php">
-	
+
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #FF99FF">
 	<center>
-	<input TYPE="submit" name="login" value="Zaloguj siê">
+	<input TYPE="submit" name="login" value="Zaloguj siï¿½">
 	</CENTER>
 	<br>
 	LUB<br>
-	Wype³nij dok³adnie poni¿szy formularz,<br>
-	aby zamówiæ bez logowania (tylko dane teleadresowe).
-	
+	Wypeï¿½nij dokï¿½adnie poniï¿½szy formularz,<br>
+	aby zamï¿½wiï¿½ bez logowania (tylko dane teleadresowe).
+
 	</SPAN>
 	<?
 	}
@@ -1827,12 +1824,12 @@ $cena50=0;
 	?>
 	<FORM ACTION="index1.php" method=post>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 16px; color: #FF99FF">
-	Witaj <?echo$loginx?>. Mo¿esz teraz chodziæ po sklepie<br>
-	bez konieczno¶ci ponownego wype³niania formularza. 
+	Witaj <?echo$loginx?>. Moï¿½esz teraz chodziï¿½ po sklepie<br>
+	bez koniecznoï¿½ci ponownego wypeï¿½niania formularza.
 	</span>
 	<?
 	};
-	
+
 	if($komunikat!="")
 	{
 	?>
@@ -1848,11 +1845,11 @@ $cena50=0;
 	<td WIDTH="100">
 	Imie:
 	</td>
-	<td WIDTH="150">	
+	<td WIDTH="150">
 	<input TYPE="TEXT" name="imie" value="<?echo$imiex?>" MAXLENGTH="15">
 	</td>
 	<TD ALIGN="CENTER">
-	
+
 	</TD>
 	</tr>
 	<tr>
@@ -1877,7 +1874,7 @@ $cena50=0;
 	</tr>
 	<tr>
 	<td>
-	Miejscowo¶æ:
+	Miejscowoï¿½ï¿½:
 	</TD>
 	<td>
 	<INPUT TYPE="TEXT" NAME="miejscow" MAXLENGTH="20" value="<?echo$miejscowx?>">
@@ -1885,7 +1882,7 @@ $cena50=0;
 	</TR>
 	<tr>
 	<td>
-	Ulica: 
+	Ulica:
 	</TD>
 	<td>
 	<INPUT TYPE="TEXT" NAME="ulica" MAXLENGTH="25" value="<?echo$ulicax?>">
@@ -1902,7 +1899,7 @@ $cena50=0;
 	</TD>
 	<TD ALIGN="CENTER">
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 14px; color: #6699FF">
-	
+
 	</span>
 	</TD>
 	</TR>
@@ -1921,7 +1918,7 @@ $cena50=0;
 	<td>
 	<INPUT TYPE="TEXT" NAME="tel" MAXLENGTH="20" value="<?echo$telx?>">
 	</TD>
-	</TR>	
+	</TR>
 	<tr>
 	<td>
 	e-mail
@@ -1932,21 +1929,21 @@ $cena50=0;
 	</TR>
 	<tr>
 	<td>
-	Rodzaj zap³aty
+	Rodzaj zapï¿½aty
 	</TD>
 	<td>
-	
-	
+
+
 	<SELECT NAME="zaplata">
-	<option VALUE="przelew">Przelew (+4 z³ wysy³ka)</OPTION>
-	<option VALUE="zapobraniem" selected>Za pobraniem (+9z³ wysy³ka)</OPTION>
+	<option VALUE="przelew">Przelew (+4 zï¿½ wysyï¿½ka)</OPTION>
+	<option VALUE="zapobraniem" selected>Za pobraniem (+9zï¿½ wysyï¿½ka)</OPTION>
 	</select>
-	
-	
+
+
 	</TD>
 	<td>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 14px; color: #6699FF">
-	
+
 	</span>
 	</TD>
 	</TR>
@@ -1963,9 +1960,9 @@ $cena50=0;
 	{
 	?>
 	<SPAN STYLE=" font-family: Times New Roman; font-size: 14px; color: #6699FF">
-	<INPUT TYPE="SUBMIT" NAME="zambezlog" VALUE="Zamów bez logowania >>" STYLE="font-family: Times New Roman; font-size: 12px">
-	(zamawianie bez logowania - najpierw wype³nij formularz)
-	
+	<INPUT TYPE="SUBMIT" NAME="zambezlog" VALUE="Zamï¿½w bez logowania >>" STYLE="font-family: Times New Roman; font-size: 12px">
+	(zamawianie bez logowania - najpierw wypeï¿½nij formularz)
+
 	</span>
 	</FORM>
 	<?
@@ -2002,24 +1999,24 @@ $cena50=0;
 
 
   // FRONTPAGE frontpage
-  
 
 
 
-  
+
+
   if($frontpage!=""&&$dane02=="")
   {
-  
-  
+
+
   $abcd=mysql_query("SELECT nazwa_p FROM `frontpage` where kolekcja='$dane01' LIMIT 0 , 1",$db);
-  list($nazwapliku)=mysql_fetch_row($abcd);  
-  
+  list($nazwapliku)=mysql_fetch_row($abcd);
+
   ?>
-  
+
   <br><br>
   <IMG SRC="index/grafiki/<?echo$nazwapliku?>.jpg" WIDTH="580" HEIGHT="300" BORDER="0" ALT="">
-  
-  
+
+
   <?
   };
 
@@ -2037,9 +2034,6 @@ $cena50=0;
 
 
 
-  
-  
-  
 
 
 
@@ -2048,7 +2042,10 @@ $cena50=0;
 
 
 
-//	  WY¦WIETLANIE PROMO 
+
+
+
+//	  WYï¿½WIETLANIE PROMO
 ?>
 <CENTER>
 <?
@@ -2060,26 +2057,26 @@ $tablenr=0;
 <table>
 <tr>
 <?
-   		$lb1=mysql_query("select przedmiot.nr as nazwa,kolekcja,katalog,nazwa_p from 
-		przedmiot,promo where promo.numer=przedmiot.nr order by 
-		promo.lp",$db); 
+   		$lb1=mysql_query("select przedmiot.nr as nazwa,kolekcja,katalog,nazwa_p from
+		przedmiot,promo where promo.numer=przedmiot.nr order by
+		promo.lp",$db);
 
-		
+
 		while(list($nr05,$kolekcja05,$katalog05,$nazwa_p05)=mysql_Fetch_Row($lb1))
 		{
 		?>
-		
+
 		<TD ALIGN="CENTER" VALIGN="MIDDLE" WIDTH="110" HEIGHT="85" STYLE="border: 1px dotted #0099FF">
-		
+
 		<A HREF="index1.php?nr02=<?echo$nr05?>&&kolekcja01=<?echo$kolekcja05?>&&do1=wyzeroj">
 		<IMG SRC='<?echo$katalog05?>/<?echo$nazwa_p05?>.jpg' WIDTH="100" HEIGHT="75" BORDER="0" ALT="<?echo$nazwa05?>">
 		</A>
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
 		</td>
 		<?
 		$tablenr++;
@@ -2088,10 +2085,10 @@ $tablenr=0;
 		$tablenr=0;
 		echo "</tr><tr>";
 		};
-												   	
-		
-		 
-		
+
+
+
+
 		};
 
 
@@ -2110,13 +2107,13 @@ $tablenr=0;
 
 
 
-// WY¦WIETLANIE O FIRMIE
+// WYï¿½WIETLANIE O FIRMIE
 if ($dane02=="ofirm"&&$koszczeg==""&&$zamow==""&&$newuser==""&&$login==""&&$zambezlog=="")
 {
 
 $plik01=fopen("index/ofirmie.txt","r");
 
-do 
+do
 {
 $tekst=fgets($plik01,"4096");
 echo"$tekst<br>";
@@ -2125,13 +2122,13 @@ while ($tekst!="");
 fclose($plik01);
 }
 
-// WY¦WIETLANIE REGULAMINU
+// WYï¿½WIETLANIE REGULAMINU
 if ($dane02=="regul"&&$koszczeg==""&&$zamow==""&&$newuser==""&&$login==""&&$zambezlog=="")
 {
 
 $plik02=fopen("index/regul.txt","r");
 
-do 
+do
 {
 $tekst1=fgets($plik02,"4096");
 echo"$tekst1<br>";
@@ -2173,25 +2170,25 @@ if($checklicznik=="")
 $checklicznik="jest";
 $liczba1=$liczba1+1;
 
-$ab91=mysql_query("UPDATE `licznik` SET `liczba` = '$liczba1' WHERE `lp` = '1' LIMIT 1",$db); 
+$ab91=mysql_query("UPDATE `licznik` SET `liczba` = '$liczba1' WHERE `lp` = '1' LIMIT 1",$db);
 
 };
 ?>
 
 <SPAN STYLE="font-family: Times New Roman; font-size: 14px; color: #FF99FF; font-style: italic">
-Nasz serwis odwiedzi³o ju¿ <?echo$liczba1?> ludzi. 
+Nasz serwis odwiedziï¿½o juï¿½ <?echo$liczba1?> ludzi.
 </SPAN>
 <HR ALIGN="CENTER" SIZE="1" WIDTH="90" COLOR="#CCCCFF">
 <SPAN STYLE=" font-family: Times New Roman; font-size: 14px; color: #66CCFF">
 
 
-Szpenio wydrukowa³ Ci Twój ulubiony motor!!!
+Szpenio wydrukowaï¿½ Ci Twï¿½j ulubiony motor!!!
 <HR ALIGN="CENTER" SIZE="1" WIDTH="90" COLOR="#CCCCFF">
 T-SHIRTY
-rêcznie malowane, wykonane przez profesjonaliste.<br>
-Oryginalne wzory, które widniej± po obu stronach koszulki.
+rï¿½cznie malowane, wykonane przez profesjonaliste.<br>
+Oryginalne wzory, ktï¿½re widniejï¿½ po obu stronach koszulki.
 <HR ALIGN="CENTER" SIZE="1" WIDTH="90" COLOR="#CCCCFF">
-Wszystkie rozmiary, ci±gle nowe rzeczy.<br>
+Wszystkie rozmiary, ciï¿½gle nowe rzeczy.<br>
 <A HREF="http://www.allegro.pl" TARGET="_blank" TITLE="Allegro.pl"><IMG SRC="index/grafiki/link2.gif" BORDER="0" ALT=""></A>
 </SPAN>
 
@@ -2215,17 +2212,17 @@ if ($dane01!="")
 </TD>
 </TR>
 <tr>
-<!-- WY¦WIETLANIE ZASOBÓW Z KOLEKCJI -->
+<!-- WYï¿½WIETLANIE ZASOBï¿½W Z KOLEKCJI -->
 <TD ALIGN="LEFT">
 
 <?
 
-  		$cdx=mysql_query("SELECT  nr,nazwa from przedmiot 
+  		$cdx=mysql_query("SELECT  nr,nazwa from przedmiot
 		where kolekcja='$dane01' order by nazwa",$db);
 		$xxx=mysql_num_rows($cdx);
-		$aaa=$xxx-10;		
-		
-				
+		$aaa=$xxx-10;
+
+
 		if($pageup==""&&$pagedown==""&&$dane02==""||$wyzeruj!="")
 		{
 		$limit1=0;
@@ -2234,35 +2231,35 @@ if ($dane01!="")
 		if($limit1<$aaa&&$pageup!="")
 		{
 		$limit1+=10;
-		
+
 		};
 		if($pagedown!=""&&$limit1>0)
 		{
 		$limit1-=10;
-		
+
 		};
-		
-  		
-		
-		
-		
-		
-		
-  		$ab=mysql_query("SELECT  nr,nazwa from przedmiot 
+
+
+
+
+
+
+
+  		$ab=mysql_query("SELECT  nr,nazwa from przedmiot
 		where kolekcja='$dane01' order by nazwa LIMIT $limit1 , $limit2 ",$db);
-				
+
 		while(list($nr01,$nazwa)=mysql_Fetch_Row($ab))
 		{
 		?>
-		
+
 		&nbsp <A HREF=index1.php?&&nr02=<?echo$nr01?>><SPAN STYLE=' font-family: Times New Roman; font-size: 12pt; color: #FFFFFF'><?echo$nazwa?><br></span></A>
-				
+
 		<?
-		
+
 
 		};
-		
-		
+
+
 		if($xxx>10)
 		{
 		?>
@@ -2283,7 +2280,7 @@ if ($dane01!="")
 		?>
 		<center>
 		<SPAN STYLE=" font-family: Times New Roman; font-size: 12px; color: #CCFFCC">
-		Wy¶wietlone:<br>od 
+		Wyï¿½wietlone:<br>od
 		<?
 		$napisz=$limit1+10;
 		echo " $limit1";
@@ -2293,12 +2290,12 @@ if ($dane01!="")
 		.
 		</SPAN>
 		</CENTER>
-		
-		
+
+
 		<?
-				
+
 echo "<br>";
-	 	
+
 
 }
 else
@@ -2316,8 +2313,8 @@ else
 </tr>
 <tr>
 <TD>
-	
-	
+
+
 </TD>
 </TR>
 
@@ -2343,7 +2340,7 @@ else
 Nasze stoisko -->
 </MARQUEE>
 <br><br>
-Wystawa motocykli i skuterów w WARSZAWIE. MOTOR BIKE SHOW POLAND 2005.<br><br>
+Wystawa motocykli i skuterï¿½w w WARSZAWIE. MOTOR BIKE SHOW POLAND 2005.<br><br>
 
 
 </SPAN>
@@ -2451,7 +2448,7 @@ Wystawa motocykli i skuterów w WARSZAWIE. MOTOR BIKE SHOW POLAND 2005.<br><br>
 
 <SPAN STYLE="font-family: Times New Roman; font-size: 14px; color: #00CCFF">
 <br><br>
-Gie³da motocykli w Warszawie.<BR><BR>
+Gieï¿½da motocykli w Warszawie.<BR><BR>
 <-- Legendarny TRIUMPH
 
 </SPAN>
@@ -2459,7 +2456,7 @@ Gie³da motocykli w Warszawie.<BR><BR>
 </td>
 
 
-	
+
 
 </td>
 </tr>
@@ -2488,9 +2485,9 @@ Gie³da motocykli w Warszawie.<BR><BR>
 <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="140">
 
 <SPAN STYLE="font-family: Times New Roman; font-size: 14px; color: #FFFFFF">
-<MARQUEE DIRECTION="RIGHT" BEHAVIOR="SCROLL" LOOP="0">ROZK£AD JAZDY</MARQUEE>
+<MARQUEE DIRECTION="RIGHT" BEHAVIOR="SCROLL" LOOP="0">ROZKï¿½AD JAZDY</MARQUEE>
 <br>
-W najbli¿szy weekend namiot SKULLS jedzie na impreze do poznania.<br><br>
+W najbliï¿½szy weekend namiot SKULLS jedzie na impreze do poznania.<br><br>
 Nasze stoisko -->
 
 </SPAN>
@@ -2572,7 +2569,7 @@ Nasze stoisko -->
 
 <SPAN STYLE=" font-family: Times New Roman; font-size: 13px">
 
-Prosimy przeczytaæ <A HREF="regulam.php?regul=yes" TARGET="_blank" TITLE="regulamin">regulamin zakupów</A>.
+Prosimy przeczytaï¿½ <A HREF="regulam.php?regul=yes" TARGET="_blank" TITLE="regulamin">regulamin zakupï¿½w</A>.
 Masz pytania? <A HREF="mailto:biuro@skulls.nazwa.pl" STYLE="font-family: Times New Roman; font-size: 12px; color: #FFFFFF">Napisz do nas</A>. Lub tel 0-607-196-453<br>
 e-mail: biuro@skulls.nazwa.pl admin@skulls.nazwa.pl<br>
 Webmaster: sikurzakk@wsi.edu.pl<br>
